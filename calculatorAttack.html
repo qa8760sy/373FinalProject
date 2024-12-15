@@ -1,0 +1,433 @@
+<!-- bonuses to attack to consider
+
+-->
+<!-- 
+<div id="">
+    <form>
+        <fieldset>                        
+            <legend></legend>
+            <label for=""></label><br>
+            <input type="">
+        </fieldset>                        
+    </form>
+</div> -->
+
+<!-- 
+weapon modifications (arms and equipment guide)
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Combat rules</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="default.css">        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="commonJS.js"></script>
+        <style>
+            .column {
+              float: left;
+              width: 50%;
+            }
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="row"> 
+        <div class="navBar">
+            <ul>
+                The rules.
+                <li><a href="/skills.html">Skills</a></li>
+                <li><a href="/feats.html">Feats</a></li>
+                <li><a href="/feats.html">Force feats</a></li>
+                <li><a href="/travel.html">Travel</a></li>
+                <li><a href="/classes.html">Classes</a></li>
+            </ul>
+            <ul>
+                Calculators.
+                <li><a href="/calculatorAttack.html">Attack calculator</a></li>
+                <li><a href="/calculatorSpaceCombat.html">Space calculator</a></li>
+                <li><a href="/calculatorAstrogation.html">Astrogation calculator</a></li>
+                </ul>
+            </div>
+
+        <div class="rightNavBar">
+            <div id="totals">
+                    <div id="attacktotal">
+                        Your total attack modifier is: <span id="total"></span>                        
+                    </div ><br>
+                        
+                    <div id="offhandattack" class="hidden">
+                        Your Off handattack modifier is:<span id="offhandattackbonus"></span>
+                    </div><br>
+
+                    <div id="extraoffhandattack" class="hidden">
+                        Your Extra Extra offhand attack: <span id="span_extraoffhandattack"></span>
+                    </div><br>
+                </div><br>
+        </div>
+
+        <div class="mainBody">
+            <div id="forms">
+            <div class="column">
+                <div id="div_statemodifiers" class="form_width">
+                    <form>
+                        <fieldset>
+                            <legend>Condition modifiers</legend>
+                            <input class="updatewhenichange" type="checkbox" id="conditions_blinded" name="input_conditions" value="-2">
+                            <label for="conditions_blinded">You are blinded</label><br>
+                            
+                            <input class="updatewhenichange" type="checkbox" id="conditions_cowering" name="input_conditions" value="-2">
+                            <label for="conditions_cowering">You are cowering</label><br>
+                            
+                            <input class="updatewhenichange" type="checkbox" id="conditions_entangled" name="input_conditions" value="-2">
+                            <label for="conditions_entangled">You are entangled</label><br>
+                            
+                            <input class="updatewhenichange" type="checkbox" id="conditions_entangled_ranged" name="input_conditions" value="-2">
+                            <label for="conditions_entangled_ranged">You are entangled and making a ranged attack.</label><br>
+                            
+                            <input class="updatewhenichange" type="checkbox" id="conditions_fatigued" name="input_conditions" value="-1">
+                            <label for="conditions_fatigued">You are fatigued</label><br>
+
+                            <input class="updatewhenichange" type="checkbox" id="conditions_exhausted" name="input_conditions" value="-3">
+                            <label for="conditions_exhausted">You are exhausted</label><br>
+
+                            <input class="updatewhenichange" type="checkbox" id="conditions_improvisedweapon" name="input_conditions" value="-4">
+                            <label for="conditions_improvisedweapon">Weapon is improvised</label><br>
+                        </fieldset>
+                    </form>
+                    
+                </div>
+
+                <div id="baseBonus" class="form_width">
+                    <form>
+                        <fieldset>
+                            <legend>Your Base attack bonus</legend>
+                            <input class="updatewhenichange" type="range" id="attackbonus" name="attackbonus" min="0" max="20" value="3"> <span id="baseattackbonus"></span> <!--Needs to be updates via JS-->
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="size" class="form_width">
+                    <form>
+                        <fieldset>
+                            <legend>Your size</legend>
+                                <select class="updatewhenichange" id="sizemodifier" name="sizemodifier">
+                                    <option value="-8">Colossal</option>
+                                    <option value="-4">Gargantuan</option>
+                                    <option value="-2">Huge</option>
+                                    <option value="-1">Large</option>
+                                    <option value="0" selected>Medium</option>
+                                    <option value="+1">Small</option>
+                                    <option value="+2">Tiny</option>
+                                    <option value="+4">Diminutive</option>
+                                    <option value="+8">Fine</option>
+                                </select>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="attribute" class="form_width">
+                    <form>
+                        <fieldset><!--every 2 points above 10 gets a +1, 12=+1, 14=+2, 16=+3, etc.-->                                                           
+                            <legend>Your raw attribute</legend>
+                            <input  class="updatewhenichange" id="rawattribute" type="number" value="10"> <span id="rawattributetext"></span>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="rangedormelee" class="form_width">
+                    <form>
+                        <fieldset>
+                            <legend>What type of attack is it?</legend>
+                            <input class="updatewhenichange" type="radio" id="ranged" name="typeofattack" value="ranged" >
+                            <label for="ranged">Ranged</label>
+                            <input class="updatewhenichange" type="radio" id="melee" name="typeofattack" value="melee">
+                            <label for="melee">Melee</label>
+                        </fieldset>                        
+                    </form>
+                </div>
+
+                <div id="meleemodifier" class="hidden form_width" >
+                    <fieldset>
+                        <legend>Melee Modifiers</legend>
+                        
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="focus" value="1">
+                        <label for="focus">Weapon Focus</label><br>
+                        <!--
+
+                        -->
+                        <label>Power attack</label><br>
+                        <input class="updatewhenichange" type="range" id="meleemod_powerattack" name="meleemods" min="0" value="0"> <span id="span_powerattack"></span><br>
+                        <!--
+
+                        -->
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" id="meleefightingdefensively" value="-4">
+                        <label for=meleefightingdefensively>Fighting defensively</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" 
+                        id="flankingdefender" value="2">
+                        <label for="flankingdefender">you are flanking<sup>a</sup></label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="dualstrike" value="2">
+                        <label for="dualstrike">Dual Strike</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="highground" 
+                        value="1">
+                        <label for="highground">You have the high-ground</label><br>
+                        
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="attackerprone" 
+                        value="-4">
+                        <label for="attackerprone">You are prone</label><br>
+                        
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" 
+                        id="attackerconcealed" value="2">
+                        <label for="attackerconcealed">you are concealed<sup>b</sup></label><br>
+                        
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" 
+                        id="targetsittingorkneeling" value="2">
+                        <label for="targetsittingorkneeling">Target is sitting or kneeling</label><br>
+                        
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="targetprone" 
+                        value="4">
+                        <label for="targetprone">target is prone</label><br>
+                        
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="targetstunned" 
+                        value="2">
+                        <label for="targetstunned">Target is stunned, cowering, or off balance<sup>b</sup>
+                        </label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="melee_unbalanceopponent" >
+                        <label for="melee_unbalanceopponent">Target is using the "<?=feat("Unbalance Opponent")?> Feat" on you<sup>c</sup>.
+                        </label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" 
+                        id="defenderclimbing" value="2">
+                        <label for="defenderclimbing">target is climbing<sup>b</sup></label><br>
+                        
+                        <input class="updatewhenichange" type="checkbox" name="meleemods" id="defenderpinned" 
+                        value="4">
+                        <label for="defenderpinned">Target is Pinned<sup>b</sup></label><br>
+                        <sup>a</sup>You flank a defender when you have an ally on the opposite side of the 
+                        defender also attacking the defender<br>
+                        <sup>b</sup>The defender loses and Dexterity bonus to Defense.<br>
+                        <sup>c</sup>If your using Dexterity as your primariy attack stack you can ignore this.
+                    </fieldset>
+                    <!-- 
+
+                     -->
+                    <fieldset>
+                        <legend>Combat Expertise</legend>
+                        <label>Combat Expertise</label><br>
+                        <input class="updatewhenichange" type="range" name="meleemods" id="melee_combatexpertise" min="0" max="5" value="0"><span id="span_combatexpertise" ></span><br>
+
+                        <label>Superior Combat Expertise</label><br>
+                        <input class="updatewhenichange" type="range" name="meleemods" id="melee_superiorexpertise" min="0" value="0"><span id="span_superiorexpertise"></span>
+                    </fieldset>
+                    <!-- 
+                        
+                     -->
+                </div>
+            </div>
+            <div class="column">
+                <div id="othermodifier" class="hidden form_width">
+                    <fieldset >
+                        <legend>Other ranged modifiers</legend>
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" id="pointblank" 
+                        value="1">
+                        <label for="pointblank">Point blank range?(adjacent-ranged attack)</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers"id="weaponfocus" 
+                        value="1">
+                        <label for="weaponfocus">Weapon Focus</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="rangedfightingdefensively" value="-4">
+                        <label for=rangedfightingdefensively>Fighting defensively</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" 
+                        name="miscmodifiers"id="concealedattacker" value="2">
+                        <label for="concealedattacker">You are concealed</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" id="defenderclimbing" value="2">
+                        <label for="defenderclimbing">Target climbing</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="defenderstunned" value="2">
+                        <label for="defenderstunned">Target is stunned, cowering, or off balance</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="defenderrunning" value="-2">
+                        <label for="defenderrunning">Target is Running</label><br>*
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="defenderpinned" value="-4">
+                        <label for="defenderpinned">Target is pinned</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="rangeddisarm" value="-4">
+                        <label for="rangeddisarm">Making a Ranged Disarm attack</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="firingintomelee" value="-4">
+                        <label for="firingintomelee">Firing into Melee</label><br>
+
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Aimed attack</legend>
+                        <input class="updatewhenichange" type="radio" name="miscmodifiers" 
+                        id="aimedattack_kneeling" value="1">
+                        <label for="aimedattack_kneeling">you are kneeling</label><br>
+
+                        <input class="updatewhenichange" type="radio" name="miscmodifiers" 
+                        id="aimedattack_prone" value="2">
+                        <label for="aimedattack_prone">You are prone</label><br>
+
+                        <button id="resetaimedattack">Unclick</button>
+                    </fieldset>
+                   
+                    <fieldset>
+                        <legend>Multifire/Auto-Fire</legend>
+
+                        <input class="updatewhenichange" type="radio" name="name_multifire" 
+                        id="misc_multifire" value="-4">
+                        <label for="misc_multifire">Multifire</label><br>
+
+                        <input class="updatewhenichange" type="radio" name="name_multifire" 
+                        id="misc_autofire" value="-6">
+                        <label for="misc_autofire">Autofire</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="misc_multishot" value="+2">
+                        <label for="misc_multishot">Multishot feat</label><br>
+
+                        <input class="updatewhenichange" type="checkbox" name="miscmodifiers" 
+                        id="misc_rapidshot" value="-2">
+                        <label for="misc_rapidshot">Rapid Shot</label><br>
+
+                        <button id="resetmultifire">Unclick</button>
+                    </fieldset>
+                </div>
+
+                <div id="rangePenalty form_width" >
+                    <form>
+                        <fieldset>
+                            <legend>Ranged penalties</legend>
+                            <label for="rangepenalties"></label><br>
+                            <input type="number" class="updatewhenichange" max="10" min="0" value="0" 
+                            id="rangepenalties" name="rangepenalties">
+                        </fieldset>                        
+                    </form>
+                </div>
+
+                <div id="div_forcemodifiers" class="form_width">
+                    <form>
+                        <fieldset>
+                            <legend>Positive Force influence</legend>
+                            <label for="name_battlemind">Battlemind</label><br>
+                            <input class="updatewhenichange" type="range" id="forcemodifier_battlemind" name="name_battlemind" min="0" max="5" value="0"><span id="span_battlemind"></span><br>
+                            
+                            <label for="forcemodifier_enhanceability">Enhance ability(divide your bonus by two)</label><br>
+                            <input class="updatewhenichange" type="range" id="forcemodifier_enhanceability" name="name_enhanceability" min="0" max="4" value="0"><span id="span_enhanceability"></span>
+                            <br>
+
+                            <input class="updatewhenichange" type="checkbox" id="forcemodifier_battlemeditation" name="input_forcemodifier" value="1">
+                            <label for="forcemodifier_battlemeditation">Battle Meditation</label><br>
+
+                            <input class="updatewhenichange" type="checkbox" id="forcemodifier_guardiansguidance" name="input_forcemodifier" value="2">
+                            <label for="forcemodifier_guardiansguidance">Guardian's Guidance</label><br>
+
+
+                        </fieldset>
+                        <fieldset>
+                            <legend>Negative Force influence</legend>
+                            <input class="updatewhenichange" type="checkbox" id="forcemodifier_hatred" name="input_forcemodifier" value="-2">
+                            <label for="forcemodifier_hatred">Hatred</label><br>
+                            
+                            <input class="updatewhenichange" type="checkbox" id="forcemodifier_whirlwind" name="input_forcemodifier" value="-4">
+                            <label for="forcemodifier_whirlwind">Force Whirlwind</label><br>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="weaponproficiency form_width">
+                    <fieldset>
+                        <legend>Weapon proficiecny?</legend>
+                        <input class="updatewhenichange" type="radio" 
+                        name="proficientwithweapon"id="yesproficient" value="0" checked="checked">
+                        <label for="yesproficient">Yes</label>
+                        <input class="updatewhenichange" name="proficientwithweapon"type="radio" 
+                        id="noproficient" value="-4">
+                        <label for="noproficient">No</label>
+                    </fieldset>
+                </div>
+
+                <div id="multiweaponfighting form_width">
+                    <form>
+                        <fieldset>                        
+                            <legend>Using more than one Weapon?</legend>
+                            <input type="radio" class="updatewhenichange" id="yesmultiwep" name="multiweapon" 
+                            value="yes">
+                            <label for="yesmultiwep">Yes</label>
+                            <input type="radio" class="updatewhenichange" id="nomulti" name="multiweapon" 
+                            value="no">
+                            <label for="nomulti">No</label>
+                        </fieldset>                        
+                    </form>
+                </div>
+
+                <div id="yesmulti" class="hidden form_width">
+                    <form>
+                        <fieldset>                        
+                            <legend>Multiweapon fighting</legend>
+                            <input type="checkbox" class="updatewhenichange" name="multiwep" id="offhandlight" value="2">
+                            <label for="offhandlight">Off-hand is light</label><br>
+                            <input type="checkbox" class="updatewhenichange" name="multiwep" id="twowepfeat" value="2">
+                            <label for="twowepfeat">Two-Weapon Fighting feat</label><br>
+
+                            <input type="checkbox" class="updatewhenichange" name="extraextraattack" id="improvedtwowep" value="-5">
+                            <label for="improvedtwowep">Improved Two weapon fighting</label><br>
+
+                            <input type="checkbox" class="updatewhenichange" name="multiwep" id="ambidexterity" value="0">
+                            <label for="ambidexterity">Ambidexterity/Multidexterity</label><br>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="threatRange" class="form_width">
+                    <form>
+                        <fieldset>
+                            <legend>What is your threat range?</legend>
+                            <select id="threat" name="threat">
+                                <option value="20">20</option>
+                                <option value="19">19-20</option>
+                                <option value="18">18-20</option>
+                                <option value="17">17-20</option>
+                                <option value="16">16-20</option>
+                            </select>
+                        </fieldset>                        
+                    </form>
+                </div>
+            </div>
+                
+
+                <div id="rolls"><!--record last 10 rolls in a text area, maybe use a table so I can always 
+                    highlight the most recent roll-->
+                    <ol reversed id="pastRolls"></ol>
+                </div><br>
+
+                <div id="buttonToRoll">
+                    <button id="roller">Roll for attack</button>
+                </div>
+                </div>
+        </div>
+    </div>
+        <script src="attackWork.js"></script>
+    </body>
+</html>

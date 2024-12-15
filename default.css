@@ -1,0 +1,123 @@
+.rightNavBar {
+  height: 80%;
+  width: 180px;
+  background-color: rgb(185, 185, 185);
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mainBody {
+  width: 80%;
+  margin-left: 200px;
+  /* float: left; */
+}
+
+.navBar {
+  height: 100%;
+  width: 180px;
+  background-color: rgb(185, 185, 185);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.displayGrid {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 5px;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+body {
+  background-image: url("Images/Background.jpg");
+  width: 80%;
+}
+
+h1 {
+  width: 80%;
+  margin-left: 180px;
+  float: left;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(93, 128, 134, 0.507);
+}
+table {
+  text-align: center;
+}
+#definitions table {
+  text-align: center;
+}
+
+#pastRolls li:last-child {
+  background-color: rgba(93, 128, 134, 0.507);
+}
+
+.hidden {
+  display: none;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.jediCounseling{
+  background-image: url("Images/jediCounseling01.jpg");
+}
+
+.question{
+  color: green;
+}
+
+.answer{
+ color: blue;
+}
+
+.requirements{
+  flex-grow:1;
+  flex-basis:200%;
+}
+.imageContainer{
+  display: flex;
+  flex-direction: row-reverse;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+}
+.flexPic{
+  display:flex;
+  
+}
+.classImage{
+  object-fit:contain;
+  flex-basis: 50%;
+  width:50%;
+}
+/*  */
+/* img{ */
+    /* position:absolute; */
+    /* object-fit:contain; */
+    /* width: 300px; */
+    /* height: 300px; */
+    /* left: 50%; */
+/* } */

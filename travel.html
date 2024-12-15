@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Movement Rules</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="default.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="commonJS.js"></script>
+    </head>
+    <body>
+        <!-- &emsp;
+            <div id=""><h4></h4><br>
+                <br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b> <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            -->
+            <!-- <li><a href="#"></a></li> -->
+            <!-- add anchor -->
+
+            <div class="navBar">
+                <ul>
+                    The rules.
+                    <li><a href="/skills.html">Skills</a></li>
+                    <li><a href="/feats.html">Feats</a></li>
+                    <li><a href="/feats.html">Force feats</a></li>
+                    <li><a href="/travel.html">Travel</a></li>
+                    <li><a href="/classes.html">Classes</a></li>
+                </ul>
+                <ul>
+                    Calculators.
+                    <li><a href="/calculatorAttack.html">Attack calculator</a></li>
+                    <li><a href="/calculatorSpaceCombat.html">Space calculator</a></li>
+                    <li><a href="/calculatorAstrogation.html">Astrogation calculator</a></li>
+                    </ul>
+                </div>
+
+        <div class="rightNavBar">
+            <button id="sortbutton">Sort this</button>
+            <ul>
+            <li>
+                <a href="#movement">Movement</a>
+                <ul>
+                    <li><a href="#modesofmovement">Modes of Movement</a></li>
+                    <li><a href="#hamperedmovement">Hampered Movement</a></li>
+                    <li><a href="#localmovement">Local Movement</a></li>
+                    <li><a href="#overlandmovement">Overland Movement</a></li>
+                </ul>
+            </li>
+            <li><a href="#encumbrance">Encumbrance</a></li>
+            <li><a href="#bookingpassage">Booking Passage</a></li>
+            <li><a href="#charteringastarship">Chartering a ship</a></li>
+            <li><a href="#hyperspacetravel">Hyper-Space travel</a></li>
+            </ul>
+            <button id="sortbutton">Sort this</button>
+        </div>
+
+        <div class="mainBody">
+            <div id="movement"><h4>Ground Movement</h4><br>
+                Characters spend a lot of time getting from one place to another. The Gm moderates the pace of 
+                a game session, so he or shee determines when movement is so important that it's worth 
+                measuring. During casual scenes, you usually won' thave to worry about movement rates. If your 
+                character arrives at a new spaceport and takes a stroll to get a feel for the place, no one 
+                needs ot know exaclty how many rounds or minutes the circuit takes.<br>
+                &emsp;There are four movement scales in the game:
+                <ul>
+                    <li>Tactical, for combat, measured in meters per round.</li>
+                    <li>Local, for exploring an area, measured in meters per minute</li>
+                    <li>Overland, for getting from place to place on a planet, measured in kilometers per hour 
+                        or day.</li>
+                    <li>Space, for getting from planet to planet, measured in light-years per hour or day.</li>
+                </ul>
+                <b id="modesofmovement">Modes of Movement</b><br>
+                While moving at the different movement scales, characters generally walk, hustle, or run.<br>
+                &emsp;<b>Walk: </b>A walk represents unhurried but purposeful movement at five kilometers per 
+                hour for an uncencumbered Human.<br>
+                &emsp;<b>Hustle: </b>A hustle is a jog covering about ten kilometers per hour for an 
+                unencumbered Human. Taking two move actions in a round represents a hustle.<br>
+                &emsp;<b>Run(x3): </b> Moving three times your normal speed is a running pace fo ra character 
+                in heavy armor. Run is a full-round aciton, and running characters lose their Dexterity bonus 
+                to Defense (if any).<br>
+                &emsp;<b>Run(x4): </b>Moving four times your normal speed is a running pace for a character in 
+                light, medium, or no armor. Run is a full-round action, and running characters lose their 
+                Dexterity bonus to Defense (if any).
+                <table>
+                    <tr>
+                        <th></th>
+                        <th colspan="3">------Speed------</th>
+                    </tr>
+                    <tr>
+                        <th>One Round (Tactical)</th>
+                        <th>4 m</th>
+                        <th>6 m</th>
+                        <th>10 m</th>
+                    </tr>
+                    <tr>
+                        <td>Walk</td>
+                        <td>4 m</td>
+                        <td>6 m</td>
+                        <td>10 m</td>
+                    </tr>
+                    <tr>
+                        <td>Hustle</td>
+                        <td>8 m</td>
+                        <td>12 m</td>
+                        <td>20 m</td>
+                    </tr>
+                    <tr>
+                        <td>Run (x3)</td>
+                        <td>12 m</td>
+                        <td>18 m</td>
+                        <td>30 m</td>
+                    </tr>
+                    <tr>
+                        <td>Run (x4)</td>
+                        <td>16 m</td>
+                        <td>24 m</td>
+                        <td>40 m</td>
+                    </tr>
+                    <tr>
+                        <th>One Minute (Local)</th>
+                    </tr>
+                    <tr>
+                        <td>Walk</td>
+                        <td>40 m</td>
+                        <td>60 m</td>
+                        <td>100 m</td>
+                    </tr>
+                    <tr>
+                        <td>Hustle</td>
+                        <td>80 m</td>
+                        <td>120 m</td>
+                        <td>200 m</td>
+                    </tr>
+                    <tr>
+                        <td>Run (x3)</td>
+                        <td>120 m</td>
+                        <td>180 m</td>
+                        <td>300 m</td>
+                    </tr>
+                    <tr>
+                        <td>Run (x4)</td>
+                        <td>160 m</td>
+                        <td>240 m</td>
+                        <td>400 m</td>
+                    </tr>
+                    <tr>
+                        <th>One Hour (Overland)</th>
+                    </tr>
+                    <tr>
+                        <td>Walk</td>
+                        <td>2 km</td>
+                        <td>3 km</td>
+                        <td>5 km</td>
+                    </tr>
+                    <tr>
+                        <td>Hustle</td>
+                        <td>4 km</td>
+                        <td>6 km</td>
+                        <td>10 km</td>
+                    </tr>
+                    <tr>
+                        <td>Run</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th>One Day (Overland)</th>
+                    </tr>
+                    <tr>
+                        <td>Walk</td>
+                        <td>16 km</td>
+                        <td>24 km</td>
+                        <td>40 km</td>
+                    </tr>
+                    <tr>
+                        <td>Hustle</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Run</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <b id="hamperedmovement">Hampered Movement</b><br>
+                Obstructions, bad surface conditions, or poor visibility can hamper movement. The Gm 
+                determines the category that a specific condition falls into. When movement is hapered, 
+                multiply the standard distance by the movement penalty (a fract) to determine the distance 
+                covered. For example, a character who could normally cover 20 meteres with a double move 
+                (hustle) can only cover 10 meters if moving through undergrowth.<br>
+                &emsp;If more than one condition applies, multiply the normal distance covered by all movement 
+                penalty fractions that apply. For instance, a character who could normally cover 20 meters 
+                with double move (hustle) could only cover 5 meters moving through thick undergrowth in fog 
+                (one quarter as far as normal).
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Example</th>
+                        <th>Speed Penalty</th>
+                    </tr>
+                    <tr>
+                        <td>Moderate obstruction</td>
+                        <td>Undergrowth</td>
+                        <td>x3/4</td>
+                    </tr>
+                    <tr>
+                        <td>Heavy obstruction</td>
+                        <td>Thick undergrowth</td>
+                        <td>x1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Bad surface</td>
+                        <td>Steep slope or mud</td>
+                        <td>x1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Very bad surface</td>
+                        <td>Deep snow</td>
+                        <td>x1/4</td>
+                    </tr>
+                    <tr>
+                        <td>Poor visibility</td>
+                        <td>Darkness or fog</td>
+                        <td>x1/2</td>
+                    </tr>
+                </table>
+                <b id="tacticalmovement">Tactical Movement</b><br>
+                Characters generally don't walk during combat - they hustle or run. A character who moves his 
+                or her speed and takes some action, such as attacking, is hustling fo about half the round and 
+                doing something else the other half.<br><br>
+                <b id="localmovement">Local Movement</b><br>
+                Characters exploring an area use local movement, measured in minutes.<br>
+                &emsp;<b>Walk: </b>A character can walk without a problem on the local scale.<br>
+                &emsp;<b>Hustle: </b>A character can hustle without a problem on the local scale. See Overland 
+                Movement, below, for movement measured in hours.<br>
+                &emsp;<b>Run: </b>A character with a Constitution score of 9 or higher can run for a minute 
+                without a problem. Generally, a character can run for about  minute or two before having to 
+                rest for a minute.<br><br>
+                <b id="overlandmovement">Overland Movement</b><br>
+                Characters covering long distances cross-country use over-land movement. Overland movement is 
+                measured in hours or days. A day represents 8 hours of actualy travel time. For vehicles, it 
+                represents a full 24hours. (If a vehicle isn't operated for a full 24 hours, multiply the 
+                distance fraction of the day the vehicle was moving.)<br>
+                &emsp;In general, each meter per round in tactical speed equaes to half a kilometer per hour 
+                in overland speed. Thus, a character with a speed of 10 meters walks 5 kilometers in an 8-hour 
+                day, while a landspeeder (with a speed of 400) can travel 4,800 kilometers per 24 hours of 
+                travel.<br>
+                &emsp;<b>Walk: </b>A character can walk 8 hours in a day of travel without a problem. Walking 
+                farther than that can wear you out (see Forced March, below).<br>
+                &emsp;<b>Hustle: </b>A character can hustle for 1 hour without a problem. Hustling a second 
+                hour in between sleep cycles causes the character to lose 1 vitality point, and each 
+                additional hour causes twice the damage taken during the previous hour.<br>
+                &emsp;<b>Run: </b>A character can't run for an extended period of time. Attempts to runa nd 
+                rest in cycles effectively work out to a hustle.<br>
+                &emsp;<b>Terrain: </b>The terrain through which a character travels affects how much distance 
+                he or she can cover in an hour or day. Travel is quickest on a highway, somewhat less quck on 
+                a raod or trail, and least quiick through trackless terrain. A highway is a straight, major, 
+                paved road. A road is typically a narrow highway. A trail is a dirt track that allows only 
+                single-file travel and does not benefit a party traveling with vehicles. Trackless terrain is 
+                a wild area iwth no paths.<br>
+                &emsp;<b>Forced March: </b>in a day of normal walking, a character walks for 8 hours. He or 
+                she spends the rest of the daylight time making and breaking camp, resting and eating.<br>
+                &emsp;A character can walk for more than 8 hours in a day by making a forced march. For each 
+                hour of marching beyond eight hours, the character makes a Constitution check (DC 10 + 1 per 
+                extra hour). If the check fials, the character loses 1d6 vitality points. The character can't 
+                recover this damage normally until he or she halts and rests for at least 4 hours. It's 
+                possible for a character to march into unconsciousness by pushing too hard.<br>
+                &emsp;<b>Mounted Movement: </b>A mount can walk at its listed speed. A mount bearing a rider 
+                can move at a hustle. It can also be force-marched, but it automatically fails its 
+                Constitution checks..<br>
+                &emsp;<b>Vehicle Movement: </b>See chapter ten: Vehicles for information on vehicle movement.
+                <table>
+                    <tr>
+                        <th>Terrain</th>
+                        <th>Highway</th>
+                        <th>Road</th>
+                        <th>Trackless</th>
+                    </tr>
+                    <tr>
+                        <td>Plains</td>
+                        <td>x1</td>
+                        <td>x1</td>
+                        <td>x1</td>
+                    </tr>
+                    <tr>
+                        <td>Scrub, rough</td>
+                        <td>x1</td>
+                        <td>x1</td>
+                        <td>x3/4</td>
+                    </tr>
+                    <tr>
+                        <td>Forest</td>
+                        <td>x1</td>
+                        <td>x1</td>
+                        <td>x1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Jungle</td>
+                        <td>x1</td>
+                        <td>x3/4</td>
+                        <td>x1/4</td>
+                    </tr>
+                    <tr>
+                        <td>Swamp</td>
+                        <td>x1</td>
+                        <td>x3/4</td>
+                        <td>x1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Hills</td>
+                        <td>x1</td>
+                        <td>x3/4</td>
+                        <td>x1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Mountains</td>
+                        <td>x3/4</td>
+                        <td>x1/2</td>
+                        <td>x1/4</td>
+                    </tr>
+                    <tr>
+                        <td>Sandy desert</td>
+                        <td>x1</td>
+                        <td>-</td>
+                        <td>x1/2</td>
+                    </tr>
+                    <tr>
+                       <td>Ice, snow</td>
+                       <td>x3/4</td>
+                       <td>x1/2</td>
+                       <td>x1/4</td> 
+                    </tr>
+                </table>
+            </div>
+
+            <div id="encumbrance"><h4>Encumbrance</h4>
+                Encumbrance rules determine how much a charater's equipment slows him or her down. Encumbrance 
+                comes in two parts: encumbrance by armor and encumbrance by total weight. Bear in mind, we 
+                don't see a lot of edvidence in the Star Wars movies of characters carrying loads of equipment 
+                or wearing tons of armor. It just isn't done. More often, extra equipment is stored in a ship 
+                and retrieved when needed.<br>
+                <b>Encumbrance by Armor</b><br>
+                Your armor defines your maximum Dexterity bonus to Defense, your 
+                armor check penalty, your speed, and how fast you move when you run. Unless your character is 
+                weak or carrying a lot of gear that's all you need to know. The extra gear your character 
+                carries, such as weapons and medpacs, won't slow your character down any more than his or her 
+                armor already does.<br>
+                &emsp;If your character is weak or carrying a really heavy load, however, then you'll need to 
+                calculate encumbrance by weigh. Doing so is most important when your character is trying to 
+                carry some heavy object, such as a pack full of survival gear or an unconscious comrade.<br><br>
+                <b>Weight</b><br>
+                If you want to determine whether your character's gear is heavy enough to slow him or her down 
+                (more than any armor already does). add up the weight of all the armor, weapons, and gear the 
+                character is carrying. Compare this total to the character's Strength on the table below. 
+                Depending on how the weight compares to your carrying capacity, you will be carryin a light, 
+                medium, or heavy load. Like armor, your load gives you a maximum Dexterity bonus to Defense, a 
+                check penalty (which works like an armor check penalty), speed, and run factor, as shown on 
+                the table. Carrying a light load does nto encumber a character.<br>
+                &emsp;If you are wearing armor, use the worse figure(from the armor or from weight) for each 
+                category. Do not stack the penalties.<br><br>
+                <b>Lifting and Dragging</b>
+                A character can lit up to the heavy load weight over his or her head.<br>
+                &emsp;A character can lift up to double the heavy load weight off the ground, but he or she 
+                can only stagger around with it. While overloaded in this way, the character loses any 
+                Dexterity bonus to Defense and can only move 2 meters per round (as a full-round action).<br>
+                &emsp;A character can generally push or drag along the ground up to five times the heavy load 
+                weight. Favorable conditions (smooth ground, draggin a slick object) can double these numbers, 
+                and unfavorable conditions (broken ground, pushing an object that snags) can reduce them to 
+                one-half or less.<br><br>
+                <b>Bigger and Smaller Creatures</b><br>
+                The figure son carrying capactiy are for Medium-size creatures. Larger creatures can carry 
+                more weight depending on size category: Large (x2), Huge(x4), Gargantuan(x8), and Colossal 
+                (x16). Smaller creatures can carry less weight depending on size category: Small (3/4), Tiny(1/
+                2), and Diminutive (1/4).<br><br>
+                <b>Tremendous Strength</b><br>
+                For Strength scores not listed, determine the carrying capacity this way: Find the Strength 
+                score between 20 and 29 that has the same one digit as the creatre's Strength score. Multiply 
+                the figures by four if the creature's Strength is in the 30s, 16 if it's in the 40s, 64 if 
+                it's in the 50s, and so on.
+                <br><br><b>Carrying Capacity</b>
+                <table>
+                    <tr>
+                        <th>Strength Score</th>
+                        <th>Light Load*</th>
+                        <th>Medium Load*</th>
+                        <th>Heavy Load*</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1.5 kg</td>
+                        <td>3 kg</td>
+                        <td>5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3 kg</td>
+                        <td>6.5 kg</td>
+                        <td>10 kg</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>5 kg</td>
+                        <td>10 kg</td>
+                        <td>15 kg</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>6.5 kg</td>
+                        <td>13 kg</td>
+                        <td>20 kg</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>8 kg</td>
+                        <td>16.5 kg</td>
+                        <td>25 kg</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>10 kg</td>
+                        <td>20 kg</td>
+                        <td>30 kg</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>11.5 kg</td>
+                        <td>23 kg</td>
+                        <td>35 kg</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>13 kg</td>
+                        <td>26.5 kg</td>
+                        <td>40 kg</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>15 kg</td>
+                        <td>30 kg</td>
+                        <td>45 kg</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>16.5 kg</td>
+                        <td>33 kg</td>
+                        <td>50 kg</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>19 kg</td>
+                        <td>38 kg</td>
+                        <td>57.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>21.5 kg</td>
+                        <td>43 kg</td>
+                        <td>65 kg</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>25 kg</td>
+                        <td>50 kg</td>
+                        <td>75 kg</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>29 kg</td>
+                        <td>58 kg</td>
+                        <td>87.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>33 kg</td>
+                        <td>66.5 kg</td>
+                        <td>100 kg</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>38 kg</td>
+                        <td>76.5 kg</td>
+                        <td>115 kg</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>43 kg</td>
+                        <td>86.5 kg</td>
+                        <td>130 kg</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>50 kg</td>
+                        <td>100 kg</td>
+                        <td>150 kg</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>58 kg</td>
+                        <td>116.5 kg</td>
+                        <td>175 kg</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>66.5 kg</td>
+                        <td>133 kg</td>
+                        <td>200 kg</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>76.5 kg</td>
+                        <td>153 kg</td>
+                        <td>230 kg</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>86.5 kg</td>
+                        <td>173 kg</td>
+                        <td>260 kg</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>100 kg</td>
+                        <td>200 kg</td>
+                        <td>300 kg</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>116.5 kg</td>
+                        <td>233 kg</td>
+                        <td>350 kg</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>133 kg</td>
+                        <td>266.5 kg</td>
+                        <td>400 kg</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>153 kg</td>
+                        <td>306.5 kg</td>
+                        <td>460 kg</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>173 kg</td>
+                        <td>346.5 kg</td>
+                        <td>520 kg</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>200 kg</td>
+                        <td>400 kg</td>
+                        <td>600 kg</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>233 kg</td>
+                        <td>456.5 kg</td>
+                        <td>700 kg</td>
+                    </tr>
+                    <tr>
+                        <td>+10</td>
+                        <td>x4</td>
+                        <td>x4</td>
+                        <td>x4</td>
+                    </tr>
+                    <tr>
+                        <td><sup>*</sup>Up to the weight shown.</td>
+                    </tr>
+                </table>
+                <br><b>Carrying Loads</b>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th colspan="2">----Speed----</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>Max Load</th>
+                        <th>Dex</th>
+                        <th>Check Penalty</th>
+                        <th>(10m)</th>
+                        <th>(6m)</th>
+                        <th>Run</th>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>+3</td>
+                        <td>-3</td>
+                        <td>6m</td>
+                        <td>4m</td>
+                        <td>x4</td>
+                    </tr>
+                    <tr>
+                        <td>Heavy</td>
+                        <td>+1</td>
+                        <td>-6</td>
+                        <td>6m</td>
+                        <td>4m</td>
+                        <td>x3</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="bookingpassage"><h4>Booking Package</h4><br>
+                lf you don't have a ship of your own (owned or borrowed),
+                your easiest option to travel between systems is booking
+                passage on a passenger liner. transport vessel, or freighter.
+                Most major systems have regular comings and going of such
+                ships. with accommodations ranging from meager to luxurious.
+                Short trip may be pricced on a per-day basis. while a flat
+                fee usually applies for longer journeys ta distant location.
+                <table>
+                    <tr>
+                        <th>Quality</th>
+                        <th>Cost/Day</th>
+                        <th>Cost/Journey*</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>Steerage</td>
+                        <td>50</td>
+                        <td>500</td>
+                        <td>Freighter hold</td>
+                    </tr>
+                    <tr>
+                        <td>Poor</td>
+                        <td>100</td>
+                        <td>1,000</td>
+                        <td>Freighter bunk</td>
+                    </tr>
+                    <tr>
+                        <td>Average</td>
+                        <td>200</td>
+                        <td>2,000</td>
+                        <td>Liner bunk</td>
+                    </tr>
+                    <tr>
+                        <td>Good</td>
+                        <td>500</td>
+                        <td>5,000</td>
+                        <td>Private room</td>
+                    </tr>
+                    <tr>
+                        <td>Luxurious</td>
+                        <td>750</td>
+                        <td>7,500</td>
+                        <td>Private stateroom</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">* One-way passage.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="charteringastarship"><h4>Charting a Starship</h4>
+                If all else fails, hire someone to fly you where you want to go. This is the most expensive 
+                form of starship travel, with character costs starting int eh thousands of credits and going 
+                up from there.<br>
+                A charcter has one enormous advantage over booking passage: privacy. Whether you're smuggling 
+                illegal cargo or you just wish to avoid Imperial entanglements, private charter is the best 
+                way to go. To reach some remote systems, it might also be the only way to go.<br>
+                In gernal, the captain of a private charter negotiates a price based on the number of 
+                passengers, the type of cargo, the distance traveled, and how dangerous the journey might be. 
+                A base price of 6,000 credits gives the average charter captain a place to start. Han Solo 
+                offered a price of 10,000 credits to get an old man, a boy, and and a pair of droids from 
+                Tatooine to Alderaan while avoiding Imperials. The GM is encouraged to negotiate in good faith 
+                if the heroes decide to go this route (unless, of course the captain they hook up with isn't a 
+                good-faith type of person).
+            </div>
+
+            <div id="hyperspacetravel"><h4>Hyper-Space travel</h4><br>
+                <h5>Order of operations</h5>
+                <ol>
+                    <li>Determine destination-from : where.</li>
+                    <li><a href="#checkdata">Determine the quality of the data being used.</a></li>
+                    <li><a href="#travelingtodc">Traveling to dc (check table)</a></li>
+                    <li><a href="#randomhazards">random hazards</a></li>
+                    <li><a href="#situationsandcircumstances">situation and cirumstances</a></li>
+                    <li><a href="#astrogationcheck">Make astrogation check</a></li>
+                    <li><a href="#calculatetime">calculate time</a></li>
+                    <li><a href="#possiblemodifiers">possible modifiers</a></li>
+                    <li><a href="#hyperspacemishap">mishaps</a></li>
+                </ol> 
+
+                <div id="checkdata">
+                    <h5>Determine the quality of the data being used</h5>
+                    <i><b>No data Available: </b></i>if an astrogator does not have any data concerning the 
+                    journey he wants his ship to make, the base DC for the Astrogate check is 30, and the 
+                    astrogator must spend 1 hour perfoming calculations and devising his own data before 
+                    attempting the check. (under other circumstances, making an <?=regSkill("Astrogate")?> 
+                    check takes only 1 minute.)<br>
+                    &emsp;As a general rule, data for a particular route through hyperspace is available to 
+                    anyone with access to the HoloNet-although the data might be out of date if the route in 
+                    question is not frequently traveled by other ships.
+                    <table>
+                        <tr>
+                            <th>Quality of Data</th>
+                            <th>Astrogate Check Base DC</th>
+                            <th>Hazard Die</th>
+                        </tr>
+                        <tr>
+                            <td>One day old or less</td>
+                            <td>10</td>
+                            <td>d4</td>
+                        </tr>
+                        <tr>
+                            <td>More than one day old up to one week old</td>
+                            <td>15</td>
+                            <td>d6</td>
+                        </tr>
+                        <tr>
+                            <td>More than one week old up to one month old</td>
+                            <td>20</td>
+                            <td>d8</td>
+                        </tr>
+                        <tr>
+                            <td>More than one month old</td>
+                            <td>25</td>
+                            <td>d10</td>
+                        </tr>
+                        <tr>
+                            <td>No data available</td>
+                            <td>30</td>
+                            <td>d12</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="travelingtodc">
+                    <h5>Traveling to DC</h5>
+                    <table>
+                        <tr>
+                            <th>Traveling From:</th>
+                            <th>Deep Core</th>
+                            <th>Core</th>
+                            <th>Colonies</th>
+                            <th>Inner Rim</th>
+                            <th>Expansion</th>
+                            <th>Mid Rim</th>
+                            <th>Outer Rim</th>
+                            <th>Wild</th>
+                            <th>Unknown</th>
+                        </tr>
+                        <tr>
+                            <td>Deep Core</td>
+                            <td>+10</td>
+                            <td>+5</td>
+                            <td>+3</td>
+                            <td>+2</td>
+                            <td>+1</td>
+                            <td>+3</td>
+                            <td>+5</td>
+                            <td>+10</td>
+                            <td>+20</td>
+                        </tr>
+                        <tr>
+                            <td>Core Worlds</td>
+                            <td>+5</td>
+                            <td>-5</td>
+                            <td>-4</td>
+                            <td>-3</td>
+                            <td>-2</td>
+                            <td>-1</td>
+                            <td>+0</td>
+                            <td>+10</td>
+                            <td>+25</td>
+                        </tr>
+                        <tr>
+                            <td>Colonies</td>
+                            <td>+5</td>
+                            <td>-4</td>
+                            <td>-3</td>
+                            <td>-2</td>
+                            <td>-1</td>
+                            <td>+0</td>
+                            <td>+2</td>
+                            <td>+15</td>
+                            <td>+20</td>
+                        </tr>
+                        <tr>
+                            <td>Inner Rim</td>
+                            <td>+5</td>
+                            <td>-3</td>
+                            <td>-2</td>
+                            <td>-1</td>
+                            <td>+0</td>
+                            <td>+2</td>
+                            <td>+3</td>
+                            <td>+10</td>
+                            <td>+15</td>
+                        </tr>
+                        <tr>
+                            <td>Expansion Region</td>
+                            <td>+10</td>
+                            <td>-2</td>
+                            <td>-1</td>
+                            <td>+0</td>
+                            <td>+0</td>
+                            <td>-1</td>
+                            <td>-2</td>
+                            <td>+10</td>
+                            <td>+15</td>
+                        </tr>
+                        <tr>
+                            <td>Mid Rim</td>
+                            <td>+10</td>
+                            <td>+2</td>
+                            <td>+1</td>
+                            <td>+0</td>
+                            <td>-1</td>
+                            <td>-2</td>
+                            <td>-1</td>
+                            <td>+7</td>
+                            <td>+12</td>
+                        </tr>
+                        <tr>
+                            <td>Outer Rim</td>
+                            <td>+15</td>
+                            <td>+3</td>
+                            <td>+2</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                            <td>+0</td>
+                            <td>+1</td>
+                            <td>+6</td>
+                            <td>+10</td>
+                        </tr>
+                        <tr>
+                            <td>Wild Space</td>
+                            <td>+20</td>
+                            <td>+18</td>
+                            <td>+15</td>
+                            <td>+12</td>
+                            <td>+10</td>
+                            <td>+7</td>
+                            <td>+3</td>
+                            <td>+0</td>
+                            <td>+25</td>
+                        </tr>
+                        <tr>
+                            <td>Unknown Regions</td>
+                            <td>+25</td>
+                            <td>+20</td>
+                            <td>+15</td>
+                            <td>+10</td>
+                            <td>+5</td>
+                            <td>+4</td>
+                            <td>+3</td>
+                            <td>+2</td>
+                            <td>+1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="randomhazards">
+                    <h5>Random Hazards</h5>
+                    <table>
+                        <tr>
+                            <th>Die Roll Result</th>
+                            <th>DC Modifier</th>
+                        </tr>
+                        <tr>
+                            <td>1-3</td>
+                            <td>+0</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>+2</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>+4</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>+6</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>+8</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>+10</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>+15</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>+20</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>+25</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>+30</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="situationsandcircumstances">
+                    <h5>Situations and Circumstances</h5>
+                    <table>
+                        <tr>
+                            <th>Situation/Circumstance</th>
+                            <th>DC modifier</th>
+                        </tr>
+                        <tr>
+                            <td>No nav computer or astromech used</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <td>Nav computer used</td>
+                            <td>-4</td>
+                        </tr>
+                        <tr>
+                            <td>Astromech droid used*</td>
+                            <td>-2</td>
+                        </tr>
+                        <tr>
+                            <td>Hyperdrive jury-rigged</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <td>Reduce time needed for check by 1 round</td>
+                            <td>+2</td>
+                        </tr>
+                        <tr>
+                            <td>No HoloNet access, or campaign is set in the Rebellion era</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">*Does not apply if the ship also has a nav computer</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="astrogationcheck">
+                    <h5>Roll Astrogation check</h5>
+                    <b>Astrogation</b><br>
+                    <i>Trained Only</i><br>
+                    Use this skill to plot a course through hyperspace from one star system to another.<br>
+                    <b>Check: </b>You can plot a safe course through hyperspace between two star systems. The 
+                    result of an Astrogate check determines whether a particular trip occurs without incident 
+                    and how much time the trip takes; a failed check indicates either a delayed journey or the 
+                    possibility of a hyperspace mishap that can ruin the journey. For information on moving 
+                    through hyperspace, see Astrogation on page 205 in Chapter Eleven: Starships.<br>
+                    You can also use this skill to determine your position in space without the use of a nav 
+                    computer by checking the constellations-provided you are traveling through an area of 
+                    space  you are Familiar wilh.<br>
+                    <b>Special: </b>You can take 10 when making an Astrogate Check, but you can't take 20 
+                    since there is a possible penalty for frailing.<br>
+                    A character with the <?=feat("Spacer")?> Feat and at least 1 rank in this skill gets a +2 
+                    aptitude bonus on Astrogate checks. <br>
+                    <b>Time: </b>Astrogating a course takes 1 minute. <br>
+                    <br><?php echo source($book[0], 76)?>
+                </div>
+
+                <div id="calculatetime">
+                    <h5>Calculating time</h5>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th colspan="9">-----------------------------------Traveling To (Base Travel Time 
+                                in Hours): ---------------</th>
+                        </tr>
+                        <tr>
+                            <th>Traveling From</th>
+                            <th>Deep Core</th>
+                            <th>Core</th>
+                            <th>Colonies</th>
+                            <th>Inner Rim</th>
+                            <th>Expansion</th>
+                            <th>Mid Rim</th>
+                            <th>Outer Rim</th>
+                            <th>Wild</th>
+                            <th>Unknown</th>
+                        </tr>
+                        <tr>
+                            <td>Deep Core</td>
+                            <td>12</td>
+                            <td>18</td>
+                            <td>24</td>
+                            <td>48</td>
+                            <td>72</td>
+                            <td>96</td>
+                            <td>120</td>
+                            <td>144</td>
+                            <td>168</td>
+                        </tr>
+                        <tr>
+                            <td>Core Worlds</td>
+                            <td>24</td>
+                            <td>6</td>
+                            <td>24</td>
+                            <td>36</td>
+                            <td>60</td>
+                            <td>84</td>
+                            <td>96</td>
+                            <td>120</td>
+                            <td>144</td>
+                        </tr>
+                        <tr>
+                            <td>Colonies</td>
+                            <td>48</td>
+                            <td>24</td>
+                            <td>12</td>
+                            <td>24</td>
+                            <td>48</td>
+                            <td>72</td>
+                            <td>96</td>
+                            <td>120</td>
+                            <td>96</td>
+                        </tr>
+                        <tr>
+                            <td>Inner Rim</td>
+                            <td>72</td>
+                            <td>36</td>
+                            <td>24</td>
+                            <td>18</td>
+                            <td>24</td>
+                            <td>48</td>
+                            <td>72</td>
+                            <td>96</td>
+                            <td>72</td>
+                        </tr>
+                        <tr>
+                            <td>Expansion Region</td>
+                            <td>96</td>
+                            <td>60</td>
+                            <td>48</td>
+                            <td>24</td>
+                            <td>24</td>
+                            <td>24</td>
+                            <td>48</td>
+                            <td>72</td>
+                            <td>96</td>
+                        </tr>
+                        <tr>
+                            <td>Mid Rim</td>
+                            <td>120</td>
+                            <td>84</td>
+                            <td>72</td>
+                            <td>48</td>
+                            <td>24</td>
+                            <td>36</td>
+                            <td>24</td>
+                            <td>48</td>
+                            <td>72</td>
+                        </tr>
+                        <tr>
+                            <td>Outer Rim</td>
+                            <td>144</td>
+                            <td>96</td>
+                            <td>96</td>
+                            <td>72</td>
+                            <td>48</td>
+                            <td>24</td>
+                            <td>48</td>
+                            <td>24</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>Wild Space</td>
+                            <td>168</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>96</td>
+                            <td>72</td>
+                            <td>48</td>
+                            <td>24</td>
+                            <td>12</td>
+                            <td>120</td>
+                        </tr>
+                        <tr>
+                            <td>Unkown Regions</td>
+                            <td>192</td>
+                            <td>144</td>
+                            <td>96</td>
+                            <td>72</td>
+                            <td>60</td>
+                            <td>72</td>
+                            <td>96</td>
+                            <td>120</td>
+                            <td>48</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="possiblemodifiers">
+                    <h5>Possible Modifiers</h5>
+                    <table>
+                        <tr>
+                            <th>Possible Modifiers</th>
+                            <th>Effect on journey</th>
+                        </tr>
+                        <tr>
+                            <td>Hyperdirve other than x1(x0.5, x2, x3, etc)<sup>a</sup></td>
+                            <td>Travel time = based travel time x hyperdrive multiplier</td>
+                        </tr>
+                        <tr>
+                            <td>Journey within same quadrant<sup>b</sup></td>
+                            <td>Travel time halved</td>
+                        </tr>
+                        <tr>
+                            <td>Astrogate check result:<sup>c</sup></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&emsp;Failure by 5 or more</td>
+                            <td><a href="#hyperspacemishap">Hyperspace mishap</a></td>
+                        </tr>
+                        <tr>
+                            <td>&emsp;Failure by 1-4</td>
+                            <td>Jump occurs; add 1d12 hours to travel time</td>
+                        </tr>
+                        <tr>
+                            <td>&emsp;Success by 0-4</td>
+                            <td>Jump occurs; no time modifier</td>
+                        </tr>
+                        <tr>
+                            <td>&emsp;Success by 5-9</td>
+                            <td>Jump occurs; subtract 1d12 hours from the travel time<sup>d</sup></td>
+                        </tr>
+                        <tr>
+                            <td>&emsp;Success by 10 or more</td>
+                            <td>Jump occurs; subtract 2d12 hours from the travel time<sup>d</sup></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><sup>a</sup>Apply this modifier first.&emsp;<sup>b</sup>Apply this modifier second.&emsp;<sup>c</sup>Apply this modifier third.&emsp;<sup>d</sup>Travel time cannot be reduced to less than1 hour</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="hyperspacemishap">
+                    <h5>Hyperspace Mishaps</h5>
+                    <table>
+                        <tr>
+                            <th>d%</th>
+                            <th>Mishap</th>
+                        </tr>
+                        <tr>
+                            <td>01-30</td>
+                            <td>No jump occurs.</td>
+                        </tr>
+                        <tr>
+                            <td>31-50</td>
+                            <td>Off course: The ship is completely off course, emerging form hyperspace at the 
+                                end of the journey's tarvel time in the wrong sytstem, which might not even be 
+                                in the same region of space as the intended system. An entirely new hyerspace 
+                                trip must be calculated.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>51-65</td>
+                            <td>Hyperspace Fluctuations: Random radiation flucuations affect the ship's travel 
+                                time, adding +2d12 hours to the trip.</td>
+                        </tr>
+                        <tr>
+                            <td>66-80</td>
+                            <td>Hyperdrive Failure: the ship's nav computer or astromech droid detects a 
+                                gravity-well shadow and returns the ship to realspace to avoid a collision. 
+                                This incident occurs at a randomly determined point along the trip. A new 
+                                hyperspace route must be calculated. For a ship without a nav computer or an 
+                                astromechd roid, treat this result as a hypersace collision(see below)</td>
+                        </tr>
+                        <tr>
+                            <td>81-90</td>
+                            <td>Hyperdrive Failure and Damage: As hyperdrive failure, above, but the 
+                                hyperdrive system is damaged and must be repaired, or a backup system must be 
+                                used. For a ship without a nav computer or an astromechd roid, treat this 
+                                result as a hyperspace collision (see below).</td>
+                        </tr>
+                        <tr>
+                            <td>91-95</td>
+                            <td>Hyperspace Collision: The ship collides with a gravity-well shadow and drops 
+                                to realspace. The ship suffers 1d10x1d10 hull points of damage. Assuming the 
+                                ship remains intact, a new hyperspace trip must be calculated.</td>
+                        </tr>
+                        <tr>
+                            <td>96-00</td>
+                            <td>Other: The Gm can devise another mishap or roll again.</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+</html>

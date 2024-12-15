@@ -1,0 +1,2239 @@
+<?php
+include("common.include.php");
+?>
+<!-- 
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<div id=""><h4></h4><br>
+    <br>
+    <b>Prerequisite: </b> <br>
+    <b>Benefit: </b> <br>
+    <b>Normal: </b> <br>
+    <b>Special: </b> <br>
+</div> -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Feats</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="default.css">
+    </head>
+    
+    <body>
+        <h1>Feats</h1>
+        
+        <div class="navBar">
+            <ul>
+                The rules.
+                <li><a href="/skills.html">Skills</a></li>
+                <li><a href="/feats.html">Feats</a></li>
+                <li><a href="/feats.html">Force feats</a></li>
+                <li><a href="/travel.html">Travel</a></li>
+                <li><a href="/classes.html">Classes</a></li>
+            </ul>
+            <ul>
+                Calculators.
+                <li><a href="/calculatorAttack.html">Attack calculator</a></li>
+                <li><a href="/calculatorSpaceCombat.html">Space calculator</a></li>
+                <li><a href="/calculatorAstrogation.html">Astrogation calculator</a></li>
+                </ul>
+            </div>
+
+        <div class="rightNavBar">
+            <ul>
+                <!-- <li><a href="#"></a></li> -->
+
+                <li><a href="#acrobatic">Acrobatic</a></li>
+                <li><a href="#advancedmartialarts">Advanced Martial Arts</a></li>
+                <li><a href="#agileriposte">Agile Riposte</a></li>
+                <li><a href="#alterness">Alterness</a></li>
+                <li><a href="#ambidexterity">Ambidexterity</a></li>
+                <li><a href="#animalaffinity">Animal Affinity</a></li>
+                <li><a href="#aristocratshonor">Aristocrats Honor</a></li>
+                <li><a href="#armorfamiliarity">Armor Familiarity</a></li>
+                <li><a href="#armorproficiencyheavy">Armor Proficiency (Heavy)</a></li>
+                <li><a href="#armorproficiencylight">Armor Proficiency (Light)</a></li>
+                <li><a href="#armorproficiencymedium">Armor Proficiency (Medium)</a></li>
+                <li><a href="#armorproficiencypowered">Armor Proficiency (Powered)</a></li>
+                <li><a href="#athletic">Athletic</a></li>
+                <li><a href="#artistic">Artistic</a></li>
+                <li><a href="#biotechfamiliarity">Biotech Familiarity</a></li>
+                <li><a href="#blasterslinger">Blaster Slinger</a></li>
+                <li><a href="#blindfight">Blind Fight</a></li>
+                <li><a href="#bureaucraticflair">Bureaucratic Flair</a></li>
+                <li><a href="#cardshark">Card Shark</a></li>
+                <li><a href="#cautious">Cautious</a></li>
+                <li><a href="#cleave">Cleave</a></li>
+                <li><a href="#climatespecialization">Climate Specialization</a></li>
+                <li><a href="#combatexpertise">Combat Expertise</a></li>
+                <li><a href="#combatreflexes">Combat Reflexes</a></li>
+                <li><a href="#combatveteran">Combat Veteran</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contracthunter">Contract Hunter</a></li>
+                <li><a href="#corporatecreditline">Corporate Credit Line</a></li>
+                <li><a href="#cosmopolitan">Cosmopolitan</a></li>
+                <li><a href="#criminalinvestigation">Criminal Investigation</a></li>
+                <li><a href="#cyberneticsurgery">Cybernetic Surgery</a></li>
+                <li><a href="#defensivemartialarts">Defensive Martial Arts</a></li>
+                <li><a href="#defensivethrow">Defensive Throw</a></li>
+                <li><a href="#diplomaticimmunity">Diplomatic Immunity</a></li>
+                <li><a href="#dodge">Dodge</a></li>
+                <li><a href="#dualstrike">Dual Strike</a></li>
+                <li><a href="#endurance">Endurance</a></li>
+                <li><a href="#expertgunner">Expert Gunner</a></li>
+                <li><a href="#extendedrage">Extended Rage</a></li>
+                <li><a href="#exoticweaponproficiency">Exotic Weapon Proficiency</a></li>
+                <li><a href="#extralucky">Extra Lucky</a></li>
+                <li><a href="#falseidentiy">False identity</a></li>
+                <li><a href="#fame">Fame</a></li>
+                <li><a href="#farshot">Farshot</a></li>
+                <li><a href="#favoredcustomer">Favored Customer</a></li>
+                <li><a href="#fieldguide">Field Guide</a></li>
+                <li><a href="#flightacademytraining">Flight Academy Training</a></li>
+                <li><a href="#forcesensitive">Force Sensitive</a></li>
+                <li><a href="#frightfulpresence">Frightful Presence</a></li>
+                <li><a href="#gearhead">Gearhead</a></li>
+                <li><a href="#greatcleave">Great Cleave</a></li>
+                <li><a href="#greatfortitude">Great Fortitude</a></li>
+                <li><a href="#guncrewchief">Gun Crew Chief</a></li>
+                <li><a href="#gunner">Gunner</a></li>
+                <li><a href="#headstrong">Headstrong</a></li>
+                <li><a href="#heartofvengeance">Heart of Vengeance</a></li>
+                <li><a href="#heroicsurge">Heroic Surge</a></li>
+                <li><a href="#highculture">High Culture</a></li>
+                <li><a href="huttfavor">Hutt Favor</a></li>
+                <li><a href="#imperialcommandtraining">Imperial Command Training</a></li>
+                <li><a href="#impersonator">Impersonator</a></li>
+                <li><a href="#improvedbantharush">Improved Bantha Rush</a></li>
+                <li><a href="#improvedcritical">Improved Critical</a></li>
+                <li><a href="#improveddisarm">Improved Disarm</a></li>
+                <li><a href="#improvedeffort">Improved Effort</a></li>
+                <li><a href="#improvedfeint">Improved Feint</a></li>
+                <li><a href="#improvedgrapple">Improved Grapple</a></li>
+                <li><a href="#improvedmartialarts">Improved Martial Arts</a></li>
+                <li><a href="#improvedoverrun">Improved Over Run</a></li>
+                <li><a href="#improvedtrip">Improved Trip</a></li>
+                <li><a href="#improvedtwoweaponfighting">Improved Two Weapon Fighting</a></li>
+                <li><a href="#improvisationalfighting">Improvisational Fighting</a></li>
+                <li><a href="#infamy">Infamy</a></li>
+                <li><a href="#influence">Influence</a></li>
+                <li><a href="#informationdebt">Information Debt</a></li>
+                <li><a href="#inventor">Inventor</a></li>
+                <li><a href="#ironwill">Iron Will</a></li>
+                <li><a href="#jedihunter">Jedi Hunter</a></li>
+                <li><a href="#jedipetitioner">Jedi Petitioner</a></li>
+                <li><a href="#kitbashing">Kit-Bashing</a></li>
+                <li><a href="#lesserblindsight">Lesser Blindsight</a></li>
+                <li><a href="#lightningreflexes">Lightning Reflexes</a></li>
+                <li><a href="#lithe">Lithe</a></li>
+                <li><a href="#livinghistory">Living History</a></li>
+                <li><a href="#lowprofile">Low Profile</a></li>
+                <li><a href="#martialarts">Martial Arts</a></li>
+                <li><a href="#merchanttrader">Merchant Trader</a></li>
+                <li><a href="#mobility">Mobility</a></li>
+                <li><a href="#mountedcombat">Mounted Combat</a></li>
+                <li><a href="#multidexterity">Multi-Dexterity</a></li>
+                <li><a href="#multiweaponfighting">Multi-Weapon Fighting</a></li>
+                <li><a href="#multishot">Multishot</a></li>
+                <li><a href="#natureaffinity">Nature Affinity</a></li>
+                <li><a href="#nimble">Nimble</a></li>
+                <li><a href="#offhandparry">Off Hand Parry</a></li>
+                <li><a href="#peacemaker">Peacemaker</a></li>
+                <li><a href="#perfectmemory">Perfect Memory</a></li>
+                <li><a href="#persuasive">Persuasive</a></li>
+                <li><a href="#pieceoftheaction">Piece of the Action</a></li>
+                <li><a href="#pinpointaccuracy">Pinpoint Accuracy</a></li>
+                <li><a href="#politicalpull">Political Pull</a></li>
+                <li><a href="#pointblankshot">Point Blank Shot</a></li>
+                <li><a href="#powerattack">Power Attack</a></li>
+                <li><a href="#preciseshot">Precise Shot</a></li>
+                <li><a href="#premiercreditline">Premier Credit Line</a></li>
+                <li><a href="#quickdraw">Quickdraw</a></li>
+                <li><a href="#quickness">Quickness</a></li>
+                <li><a href="#rangeddisarm">Ranged Disarm</a></li>
+                <li><a href="#rapidgunner">Rapid Gunner</a></li>
+                <li><a href="#rapidshot">Rapid Shot</a></li>
+                <li><a href="#rebeltraining">Rebel Training</a></li>
+                <li><a href="#redirectattack">Redirect Attack</a></li>
+                <li><a href="#resistpoison">Resist Poison</a></li>
+                <li><a href="#ridebyattack">Ride By Attack</a></li>
+                <li><a href="#rogueheritage">Rogue Heritage</a></li>
+                <li><a href="#selfsufficient">Self Sufficient</a></li>
+                <li><a href="#shadymerchant">Shady Merchant</a></li>
+                <li><a href="#shotontherun">Shot On The Run</a></li>
+                <li><a href="#seinarservicecontract">Seinar Service Contract</a></li>
+                <li><a href="#skeptical">Skeptical</a></li>
+                <li><a href="#skillemphasis">Skill Emphasis</a></li>
+                <li><a href="#spacer">Spacer</a></li>
+                <li><a href="#spiritedcharge">Spirited Charge</a></li>
+                <li><a href="#springattack">Spring Attack</a></li>
+                <li><a href="#stamina">Stamina</a></li>
+                <li><a href="#starshipdodge">Star Ship Dodge</a></li>
+                <li><a href="#starshipoperation">Starship Operation</a></li>
+                <li><a href="#starshippointblankshot">Starship Point Blank Shot</a></li>
+                <li><a href="#starshippoweroverride">Starship Power Override</a></li>
+                <li><a href="#steady">Steady</a></li>
+                <li><a href="#stealthy">Stealthy</a></li>
+                <li><a href="#streetsmart">Street Smart</a></li>
+                <li><a href="#stunningstrike">Stunning Strike</a></li>
+                <li><a href="#sunder">Sunder</a></li>
+                <li><a href="#superiorexpertise">Superior Expertise</a></li>
+                <li><a href="#surefooted">Surefooted</a></li>
+                <li><a href="#surgery">Surgery</a></li>
+                <li><a href="#technicalwizard">Technical Wizard</a></li>
+                <li><a href="#toughness">Toughness</a></li>
+                <li><a href="#track">Track</a></li>
+                <li><a href="#traderoutefamiliarity">Trade Route Familiarity</a></li>
+                <li><a href="#trick">Trick</a></li>
+                <li><a href="#trustworthy">Trustworthy</a></li>
+                <li><a href="#twoweaponfighting">Two Weapon Fighting</a></li>
+                <li><a href="#unbalanceopponent">Unbalance Opponent</a></li>
+                <li><a href="#underworldconnections">Underworld Connections</a></li>
+                <li><a href="#untouchable">Untouchable</a></li>
+                <li><a href="#weaponfinesse">Weapon Finesse</a></li>
+                <li><a href="#weaponfocus">Weapon Focus</a></li>
+                <li><a href="#weapongroupproficiency">Weapon Group Proficiency</a></li>
+                <li><a href="#weaponspecialization">Weapon Specialization</a></li>
+                <li><a href="#whirlwindattack">Whirlwind Attack</a></li>
+                <li><a href="#worldwise">Worldwise</a></li>
+                <li><a href="#zerogtraining">Zero-G Training</a></li>
+                <li><a href="#martialartsfeats">Martial Arts Feats</a></li>
+            </ul>
+        </div>
+
+        <div class="mainBody">
+            <!--
+            <div id=""><h4></h4><br>
+                <br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b> <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+            -->
+            <!-- add anchor -->
+            <div id="acrobatic"><h4>Acrobatic</h4><br>
+                You are very agile.<br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>You gain a +2 aptutude bonus on all Jump checks and Tumble checks. that the Tumble skill can't be used untrained. <br>
+            </div>
+
+            <div id="advancedmartialarts">Advanced Martial Arts<h4></h4><br>
+                You are a master of unarmed combat due to your advanced training.<br>
+                <b>Prerequisite: </b>Martial Arts, Improved Martial Arts, base attack bonus of +8 <br>
+                <b>Benefit: </b>A Medium-size character deals 3d4 damage with an unarmed strike. Strenght 
+                modifiers apply. Also, you threaten a critical hit on a natural 18, 19, or 20 when making an 
+                unarmed attack.<br>
+                Small characters deal 3d3 damage and Large Characters deal 3d6 damage with an unarmed strike 
+                and this feat.<br>
+            </div>
+            
+            <div id="agileriposte"><h4>Agile Riposte</h4><br>
+                You have learned to strike when your opponent is most vulnerable: at the same instant your 
+                opponent strieks you.<br>
+                <b>Prerequisite: </b>Dexterity 13, Dodge<!-- add anchor --><br>
+                <b>Benefit: </b>Once per round, if the opponent you have designated as your Dodge target (see 
+                the Dodge feat) makes a melee attack or melee touch attack against you and misses, you may 
+                take an attack of opportunity against that opponent. Resolve and apply the effects from both 
+                attacks simultaneously. <br>
+                Even a character witht he Combat Reflexes feat can't use the Agile Riposte feat more than once 
+                per round. This feat does not grant you more attacks of opportunity than you are normally 
+                allowed in a round.<br>
+                <b>Special: </b>A soldier, Jedi consular, or Jedi guardian may select this feat as one of his 
+                class bonus feats. <br>
+            </div>
+
+            <div id="alterness"><h4>Alterness</h4><br>
+                You are keenly aware of your surroundings.<br>
+                <b>Prerequisite: </b>Y
+                <b>Benefit: </b>ou get a +2 aptitude bonus on all Listen checks and Spot checks.<br>
+            </div>
+
+            <div id="ambidexterity"><h4>Ambidexterity</h4><br>
+                You are equally adept at using either hand.<br>
+                <b>Prerequisite: </b>Dexterity 15.<br>
+                <b>Benefit: </b>You ignore all penalties for using an off hand. You are neither left-handed 
+                nor right-handed. <br>
+                <b>Normal: </b>Without this feat, a character who uses his or her off hand takes a -4 penalty 
+                on attack rolls, ability checks, and skill checks. For exmaple, a right-handed character 
+                wiedling a weapon with her left hand takes a -4 penalty on attack rolls with that weapon.<br>
+                <b>Special: </b>This feat helps offset the penalty for fighting with two weapons. See the 
+                Two-Weapon Fighting feat, table penalties <br>
+            </div>
+
+            <div id="animalaffinity"><h4>Animal Affinity</h4><br>
+                You are good with animals.<br>
+                <b>Prerequisite: </b>you ge ta +2 aptitude bonus on all Handle Animal and Ride checks. Remeber that the Handle Animal skill can't be used untrained.<br>
+                <b>Benefit: </b> <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="aristocratshonor"><h4>Aristocrat's Honor</h4><br>
+                You come from the aristocracy, where honor is a vital part of everyday life-despite the fact that so many nobles constantly plot against one another. You, however, are a paragon of honor, though if you should ever fail to live up to noble standards, the consequences could be unpleasant.<br>
+                <b>Prerequisite: </b>Noble level 1st. <br>
+                <b>Benefit: </b>You Gain a =1 bonus on your Reputation. <br>
+                This bonus inreases to a +2 when dealing with other nobles.<br>
+                If you break your word to another noble, you mimmediately become infamous. You can remove this stain on your honor (and no longer be considered infamous) by expending 1 Force Point the next time you advance a level.<br>
+                <b>Special: </b>This feat may only be taken at 1st level. With the GM's permission, you may take it when you acquire your first level of the noble class. <br>
+            </div>
+
+            <div id="armorfamiliarity"><h4>Armor Familarity</h4><br>
+                You are accustomed to wearing a particular suit or type of armor and are less hindered by it 
+                due to experience.<br>
+                <b>Prerequisite: </b>Proficient with the specific armor. <br>
+                <b>Benefit: </b>When wearing a single type of armor, such as padded battle armor, all armor 
+                check penalties are reduced by 1 and your maximum Dexterity bonus to Defense increases by 1. 
+                <br>
+                <b>Special: </b>You can gain this feat multiple times. Its effecst do not stack. Each time you 
+                take the feat, it applies to a different type of armor. <br>
+            </div>
+
+            <div id="armorproficiencyheavy"><h4>Armor Proficiency (heavy)</h4><br>
+                You are proficient with heavy armor(see: Armor)<br>
+                <b>Prerequisite: </b>Armor Proficency(light, Armor Proficiency (medium). <br>
+                <b>Benefit: </b>See Armor Proficiency (light). <br>
+                <b>Normal: </b>See Armor Proficiency (light). <br>
+            </div>
+
+            <div id="armorproficiencylight"><h4>Armor Proficiency (light)</h4><br>
+                You are proficient with light armor (see Armor)<br><!-- add anchor, armor -->
+                <b>Benefit: </b>When you wear a type of armor with which you are proficient, the armor check 
+                penalty applies to Climb, Escape Artist, Hide, Jump, Move Silently, Sleight of Hand, and Tumble <br>
+                <b>Normal: </b>A character who wears armo iwth which she is not proficient takes an armor 
+                check peanlty on attack rollsa nd on all skill checks that invovle moving, including Ride and Pilot <br>
+                <b>Special: </b>Soldiers get thsi feat for free. <br>
+            </div>
+
+            <div id="armorproficiencymedium"><h4>Armor Proficiency (medium)</h4><br>
+                You are proficient with medium armor(see Armor). <br>
+                <b>Prerequisite: </b>Armor Proficency (light). <br>
+                <b>Benefit: </b>Armor Proficency (light). <br>
+                <b>Normal: </b>Armor Proficency (light). <br>
+            </div>
+
+            <div id="armorproficiencypowered"><h4>Armor Proficiency (powered)</h4><br>
+                You understand how to fully utilize the various features of powered armor.<br>
+                <b>Prerequisite: </b>Armor Proficency (light), Armor Proficency (medium). <br>
+                <b>Benefit: </b>Armor Proficency (light). <br>
+                <b>Normal: </b>Armor Proficency (light). In addition, a character who wears a powered armor 
+                without this feat does not recieve any bonuses to ability checks or skill echecks provided by 
+                the armor. <br>
+            </div>
+
+            <div id="athletic"><h4>Athletic</h4><br>
+                You have  aknack for athletic endeavors.<br>
+                <b>Benefit: </b>you get a +2 aptitude bonus on all Climb checks and  
+                Swim checks.  <br>
+            </div>
+
+            <div id="artistic"><h4>Artistic</h4><br>
+                You come from a culture in which the arts, philosoph). and music have a prominent place in 
+                society. You may be from Alderaan, Obroa-skai, Vortex, Naboo, or one of Coruscant"s more 
+                upscale districts.<br>
+                <b>Benefit: </b>You gain a +2 aptitude bonus on all
+                Entertain checks and to one Craft skill that involves
+                art (your choice) such as calligraphy, painting, sculpture.
+                or weaving. <br>
+                <b>Special: </b>This feat may only be taken at 1st level. <br>
+            </div>
+
+            <div id="biotechfamiliarity"><h4>Biotech Familiarity</h4><br>
+                You have learned the basic methods of use for many types of Yuuzhan Vong biotechnology and can 
+                use their equipment and don their gear with less difficulty.<br>
+                <b>Prerequisite: </b>Peace Brigade Sympahty +3.<br>
+                <b>Benefit: </b> You gain a =2 bonus on all saving throws and a +4 bonus on all skill checks 
+                and ability checks involving donning or using Yuuzhan Vong biotechnology<br>
+                <b>Normal: </b> Some Yuuzhan Vong equipment, when used by another species, requires a saving 
+                throw to resist being stunned by the process, or a skill or ability check to determine whether 
+                or not the character is able to use the device.<br>
+            </div>
+
+            <div id="blasterslinger"><h4>Blaster Slinger</h4><br>
+                You are incrediby fast when drawing a blaster from its holster, and can shoot a target in the
+                blink of an eye.<br>
+                <b>Prerequisite: </b>Dexterity 13, Quick Draw, Weapon Group Proficiency (blaster pistols) <br>
+                <b>Benefit: </b>Whenever you roll the highest initiative score at the beginning of combat, you 
+                gain a surprise action prior to your regular actions if you use the surprise action to fire a
+                blaster pistol. If you have already taken a surprise action for this combat, you gain no 
+                additional benefit. <br>
+            </div>
+
+            <div id="blindfight"><h4>Blind-Fight</h4><br>
+                You know how to fight in melee without being able to see your foes.<br>
+                <b>Benefit: </b>In melee combat, every time you miss because of concealment, you can reroll your miss chance percentile roll one time to see if you actually hit (see, Concealment page 163). <br>
+                You take only half the usual penalty to speed for being unable to see. Darkenss and poor visibility in general reduces your speed to three-0quarters of nomral, instead of one-half (see, Hampered Movement. page 126)
+            </div>
+
+            <div id="bureaucraticflair"><h4>Bureaucratic Flair</h4><br>
+                You have a talent for divining the workings and intricacies of bureaucracy in all its forms. 
+                Whether you're attempting to free your impounded starship or pass a trade bill, you are adept 
+                at manipulating a bureacracy's insittutions and members to your benifit.<br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="cardshark"><h4>Card Shark</h4><br>
+                You have exceptional skill when playing games such as sabacc and can manipulate the deck with
+                great ease.<br>
+                <b>Benefit: </b>You gain a +2 aptitude bonus on all Gamble and Sleight of Hand checks.<br>
+            </div>
+
+            <div id="cautious"><h4>Cautious</h4><br>
+                You are especially careful with tasks that may yield catastrophic results.<br>
+                <b>Benefit: </b> You get a +2 aptitude bonus on all Demolitions checks and Disable Device checks. You must have at elast 1 rank in the skill to use the aptitude bonus, since neither skill can be used untrained.<br>
+            </div>
+
+            <div id="cleave"><h4>Cleave</h4><br>
+                You can follow through with a powerful melee attack.<br>
+                <b>Prerequisite: </b>Strength 13, Power Attack.<br><!-- add anchor -->
+                <b>Benefit: </b>If you deal an opponent enough damage to reduce his wound points to below 0, 
+                you get an immediate extra melee attack against another opponent in the area. You cannot take 
+                a 2-meter step beore making this extra attack. The extra attack is with the same weapon and at 
+                the same bonus as the attack that dropped the previous opponent. You can use this ability once 
+                per round. <br>
+            </div>
+
+            <div id="climatespecialization"><h4>Climate Specialization</h4><br>
+                Because you've spent so much time surviving in a particular climate, you're especially good at 
+                negotiating its hazards.<br>
+                <b>Prerequisite: </b>Fringer level 5th.<br>
+                <b>Benefit: </b>Choose a terrain type form the following list: airborne, aquatic, arctic, desert, forest, jungle, plains, subterranean, tundra, urban. You giana  +2 aptitude bonus on Survival, Hide, and Search checks made in that type of climate. <br>
+                <b>Special: </b>You may select thsi feat mutliple times. Each time you do it applies to a different climate. <br>
+            </div>
+
+            <div id="combatexpertise"><h4>Combat Expertise</h4><br>
+                You are trained at using your combat skill for defense as well as offense.<br>
+                <b>Prerequisite: </b>Intelligence 13. <br>
+                <b>Benefit: </b>When you use the attack action or full attack action in melee, you can take a 
+                penalty of up to -5 on your attack and add the same number (up to +5) to your Defense. This 
+                number may not exceed your base attack bonus. The changes to attack rolls and Defense last 
+                until your next action. The bonus to your Defense is a dodge bonus (and as such it stacks with 
+                other dodge bonuses you may have). <br>
+                <b>Normal: </b>A character not capable of the Combat Expertise feat can fight defensively 
+                while using the attack or full attack actiont ot take a -4 penalty on attacks and gaina  +2 
+                dodge bonus to Defense. <br>
+            </div>
+
+            <div id="combatreflexes"><h4>Combat Reflexes</h4><br>
+                You can respond quickly and repeatedly to opponents who let their guard down.<br>
+                <b>Benefit: </b>When opponents leave themselves open, you may make a number of additonal 
+                attacks of opportunity equal to your Dexterity modifier. For example, a character with a 
+                Dexterity of 15 can make a total of tthree attacks of opportunity in a round: the one attack 
+                of opportunity every character is entitled to, plus two more attacks because of his +2 
+                Dexterity bonus. If four stormtroopers move through the character's threatened area, he can 
+                make attacks of opportunity against three of the four. You still only make one attack of 
+                opportunity on a single opponent. <br>
+                With this feat, you may also make attacks of opportunity while flat-footed.<br>
+                <b>Normal: </b>A character without the Combat Reflexes feat can make only one attack of 
+                opportunity per round and can't make attacks of opportunity while flat-flooted. <br>
+            </div>
+
+            <div id="combatveteran"><h4>Combat Veteran</h4><br>
+                Your experiences with firefights and the up-close, ugly face of war have taught you how to 
+                keep youre cool in stressful situations.<br>
+                <b>Prerequisite: </b>Widsom 13, at least three Weapon Group Proficiency and/or Exotic Weapon 
+                Proficiency feats. <br>
+                <b>Benefit: </b>Designate any non-Force skill when you select this feat. You may take 10 when 
+                making a skill check with this skill, even if stress and distractions would normally prevet 
+                you from doing so. <br>
+                <b>Normal: </b>You cannot take 10 except in nonstressful situations where you are not in any particular danger from doing so.<br>
+                <b>Special: </b>You may select thsi feat multiple times. Each time you do , it applies to a different skill.<br>
+                A solider character may select this feat as one of his solider bonus feats.<br>
+            </div>
+
+            <div id="contact"><h4>Contact</h4><br>
+                You have friends who can occasionally afford to lend you their aid.<br>
+                <b>Prerequisite: </b>Noble level 5th. <br>
+                <b>Benefit: </b>You gain a contact, see the rule on Favors and contacts in the core book. <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b>You may take this feat multiple times.<br>
+                Each time, you gain a different contact.<br>
+            </div>
+
+            <div id="contracthunter"><h4>Contract Hunter</h4><br>
+                Your connection to the Guild allows you to easily find bounty contracts not posted on public channels.<br>
+                <b>Prerequisite: </b>Bounty Hunters' Guild Sympathy +1 <br>
+                <b>Benefit: </b>You may make a Gather Information check (DC 15) to search the Bounty Hunters' Guilds's contract database and find a contract not avaliable to the public. Such contracts are typically more dangerous than others, or have certain restricitons placed on the method of collection, but usually bring them a higher price tag. <br>
+                <b>Special: </b>You must have access to aa computer terminal capable of communcating over interstellar distance sot use this feat. If your Bounty Hutner's Guild Sympathy drops below +1 , you lose the befefits of this feat. <br>
+            </div>
+            
+            <div id="corporatecreditline"><h4>Corporate Credit Line</h4><br>
+                You have a credit account int he Corporate Sector.<br>
+                <b>Prerequisite: </b>Corporate Sector Sympathy +1.<br>
+                <b>Benefit: </b>While purchasing Corporate Sector goods and services, you can recive the goods or services immediately at no cost. The maximum total value of the goods and services recieved is equal to your Corporate Sympathy bonus x 10,000. At the end of the adventure or some other agreed-ipn time period, however, you are expected to pay 125% of the cost to cover the debt on your Corporaate Sector credit account.<br>
+                &emsp;If you are unable to apy this debt in full when it is due, your Corporate Sector Sympathy score is reduced by 1 point. Furthermore, you lose the benefit of this feat until teh debt is paid. <br>
+            </div>
+
+            <div id="cosmopolitan"><h4>Cosmopolitan</h4><br>
+                You have spent part of your life in an area known for its cultural diversity, such as 
+                Coruscant, Nar Shaddaa, the Corporate Sector. and so on. Your exposure to multiple cultures 
+                has significantly broadened your horizons.<br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>Choose a non-Force skill you do not have as a class skill. You gain a +2 bonus 
+                on all checks with that skill, and that skill is always considered a class skill for you. <br>
+                <b>Special: </b>You may take this feat multiple times. Its efects do not stack. Each time you take the feat, it applies to a new non-Force skill. <br>
+            </div>
+            
+            <div id="criminalinvestigation"><h4>Criminal Investigation</h4><br>
+                You have the skills to conduct an investigation to effeciently learn as much as possible abou a crime.<br>
+                <b>Prerequisite: </b>Charisma 13<br>
+                <b>Benefit: </b>You gain a +1 competence bonus on Bluff, Gather Information, Listen, and Spot checks made to investigate a crime or gather information regardin a known criminal.<br>
+                <b>Special: </b>You must have joined the COrellian Security Force to take this feat, but you do not lose its benefits if you later leave the Corellian Security Force. <br>
+            </div>
+
+            <div id="cyberneticsurgery"><h4>Cybernetic Surgery</h4><br>
+                You can perform the surgical procedures necessary to graft mechanical components onto living 
+                flesh.<br>
+                <b>Prerequisite: </b>Treat Injury 8 ranks, Surgery.<br><!-- add anchor -->
+                <b>Benefit: </b>You can make a Treat Injury check to install cybernetic 
+                prosthetics on a living being. <br>
+                See Cybernetics in Chapter Six.
+            </div>
+
+            <div id="defensivemartialarts"><h4>Defensive Martial Arts</h4><br>
+                You are skilled to avoidin harm due to your improved martial arts training.<br>
+                <b>Prerequisite: </b>Martial Arts. <br><!-- add anchor -->
+                <b>Benefit: </b>You get a +2 dodge bonus to Defense. <br>
+            </div>
+
+            <div id="defensivethrow"><h4>Defensive Throw</h4><br>
+                You can use your opponent's weight, strength, and momentum against her, deflecting her attacks 
+                and throwing her to the ground.<br>
+                <b>Prerequisite: </b>Dexterity 13, Combat Reflexes, Dodge, Improved Martial Arts, Improved 
+                Trip.<br>
+                <b>Benefit: </b>If the opponent you are dodging (as per the Dodge feat) makes a melee attack 
+                against you and misses. You can make an immediate improved trip attack against that opponent 
+                as an attack of opportunity. <br>
+                This feat does not grant you more attacks of opportunity than you are normally allowed in a 
+                round.<br>
+            </div>
+
+            <div id="diplomaticimmunity"><h4>Diplomatic Immunity</h4><br>
+                Your government (or one with which you are affliated) has a diplomatic treaty with another 
+                government. Whiel you are within the territory of the other government, While you are within 
+                the territroy of the other government, you are effectively immunue to their laws- up to a 
+                point.<br>
+                <b>Benefit: </b>Select a recognized politcal entitv. such as the Empire, the Hapan Consortium, 
+                the Corporate Sector, the Old Republic, or the New Republic. (You cannot select the Hutt 
+                because of the unpredictable nature of Hutt justice.) If you are arrested for a crime while 
+                within the borders of that political entity. You can make a Diplomacy check 
+                to invoke your 
+                diplomatic credential, and not suffer the usual local penalty or punishment. The severity of 
+                the crime determines the DC of the Diplomacy check, and how the authorities react if you 
+                succeed. See Table 3-2: Diplomatic Immunity for Diplomacy check DCs based 
+                on the severity of 
+                the crime. <br>
+                <b>Special: </b>If you fail the check by more than 10, you lose the benefits of the this feat 
+                until you advance a level.<br>
+                You must be affiliated with a recognized political body to take this feat. You cannot select a 
+                government with which your political body is at war. if war breaks out between the two 
+                governments, you lose the benefits of this feat until hostilities are suspende.<br>
+                A noble may slect this feat as one of her noble bonus feats <br>
+                <table>
+                    <tr>
+                        <th>Severity of Crime</th>
+                        <th>Example</th>
+                        <th>Diplomacy check DC</th>
+                        <th>Effect of Successful Diplomacy check</th>
+                    </tr>
+                    <tr>
+                        <td>Class 5</td>
+                        <td>Dsitrubing the peace, public intoxication, noninjurious traffic violation</td>
+                        <td>15</td>
+                        <td>-2 on subsequent Diplomacy checks in that area</td>
+                    </tr>
+                    <tr>
+                        <td>Class 4</td>
+                        <td>Possession of controlled substance, injurious traffic violation, operating a 
+                        business without a license, operatinga  vehicle without a license, operatina  starship 
+                        without a license, assault(without a deadly weapon)</td>
+                        <td>20</td>
+                        <td>-5 on subsequent Diplomacy checksin that area</td>
+                    </tr>
+                    <tr>
+                        <td>Class 3</td>
+                        <td>Attempted bribery of a public offical, robbery or grand theft, aiding and abetting 
+                        a known felon, assault with a deadly weapon, possession of a concealed weapon</td>
+                        <td>25</td>
+                        <td>-10 on subsequent Diplomacy checksin that area</td>
+                    </tr>
+                    <tr>
+                        <td>Class 2</td>
+                        <td>Murder/manslaughter, fraud or smuggling, assault against a public offical, trafficking in controlled substances</td>
+                        <td>30</td>
+                        <td>Deportation within 2d6 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Class 1</td>
+                        <td>Conspiracy against the government, murder of public official, sabotage of public utilities</td>
+                        <td>35</td>
+                        <td>Detention pending diplimatic action by character's affliliated government</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="dodge"><h4>Dodge</h4><br>
+                You are adept at dodging attacks.<br>
+                <b>Prerequisite: </b>Dexterity 13.<br>
+                <b>Benefit: </b>During your action, you designate an oppoinent and recieve a +1 dodge bonus 
+                to Defense against any subsequent attacks from that opponent. You can select a new opponent on 
+                any action.<br>
+                <b>Special: </b>A condition that makes you lose your Dexterity bonus to Defense (if any) also 
+                makes you lose dodge bonuses. Also, dodge bonuses tack with each other, unlike most other 
+                types of bonuses.<br>
+            </div>
+
+            <div id="dualstrike"><h4>Dual Strike</h4><br>
+                Your combat teamwork makes you a more dangerous foe.<br>
+                <b>Prerequisite: </b>Bast attack bonus +3, Combat Reflexes. <br>
+                <b>Benefit: </b>If you and an ally flank an opponent, you get a +4 bonus on your attack roll. 
+                <br>
+                <b>Normal: </b>The standard flanking attack roll bonus is +2. <br>
+                <b>Special: </b>A solider or Jedi guardian may take this feat as one of his bonus feats.<br>
+            </div>
+
+            <div id="endurance"><h4>Endurance</h4><br>
+                You are capable of amazing feats of endurance<br>
+                <b>Benefit: </b>You gain a +4 bonus to the following checks and saves: Swim 
+                checks to stave off weariness, Constitution checks to continue running, Constitution checks to 
+                hold your breath, COnstitution checks to avoid damage from hot or cold environments, and 
+                Fortitude checks to resist damage from oxygen deprivation.<br>
+            </div>
+
+            <div id="expertgunner"><h4></h4><br>
+                You are among the most skilled sharship weapon operators in the galaxy<br>
+                <b>Prerequisite: </b>Gunner, base attack bonus +9 or higher.<br>
+                <b>Benefit: </b>You never suffer range penalties on attack rolls when firing on targets at 
+                short or medium range, regardless of the size of the ship you are in.<br>
+                <b>Normal: </b>most ships suffer a penalty when firing at short or redium range.<br>
+            </div>
+
+            <div id="extendedrage"><h4>Extended Rage</h4><br>
+                Your rage lasts longer than it normally would.<br>
+                <b>Prerequisite: </b>Ability to rage. <br>
+                <b>Benefit: </b>Each time you rage, the efects of the rage lasts 5 rounds longer than the normal duration. <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b>You can select this feat multiple times. Each time you do, add 5 rounds to the duration of the rage and the post-rage fatigue.<br>
+            </div>
+
+            <div id="exoticweaponproficiency"><h4>Exotic Weapon Proficiency</h4><br>
+                Choose an exotic weapon, such as bowcaster or lightsaber (see table 7-2: weapons for a list of 
+                exotic weapons). You understand how to use that type of exotic weapon in combat.<br>
+                <b>Benefit: </b>You make attack rolls with the weapon normally. <br>
+                <b>Normal: </b>A character who uses a weapon without being proficient with it takes a -4  
+                penalty on attack rolls. Some weapons (such as lightsabers) may have additonal penalites or 
+                drawbacks when used by a character who is not proficient (see Chapter Seven: Equipment). <br>
+                <b>Special: </b>You can gain this feat multiple times. Each time you take the feat, it applies 
+                to a different weapon. Proficiency with the lightsaber has a prerequisite of Dexterity 11). 
+                <br>
+            </div>
+
+            <div id="extralucky"><h4>Extra Lucky</h4><br>
+                You have exceptional luck.<br>
+                <b>Prerequisite: </b>Lucky class feature. <br>
+                <b>Benefit: </b>You gain one additional use of the lucky special quality per day. <br>
+            </div>
+            
+            <div id="falseidentiy"><h4>False Identity</h4><br>
+                As an operative of the Bothan Spynet, you have been equipeed with an alternate identity for those times when you need to go deep undercover.<br>
+                <b>Prerequisite: </b>Bluff, <?feat("Low Profile <br>
+                <b>Benefit: </b>With the help of the Bothan Spynet, you have created an alternate persona for your character, complete with life histroy, goals, and motivations. When using this false identity, Sympathy bonuses that you gain are separate from teh Sympathy bonuses gained in your original identity, For example, your reaal identity oculd have Bothan Sympathy +5 and Hutt Sympathy +1, but your false identity could have Bothan Sypmathy +1 and Imperial Sympathy +5. You will need to keep separate track of the sympathy bonuses for each of your identities, false and real. <br>
+                <b>Special: </b>If your false identity appears to ahve died (perhaps as a way for you to escape some danger or disappear), you may begin a new false identiy with no poitns in an Sympathies.<br>
+                &emsp;You maky take this feat multiple times to maintain multiple identites.<br>
+                &emsp;You must have joined the Bothan Spynet to take this feat, but you do not lose its benefits if you later quit the active service of the Bothan Spynet. <br>
+            </div>
+
+            <div id="fame"><h4>Fame</h4><br>
+                You are particularly well known.<br>
+                <b>Benefit: </b>Your reputation bonus increases by +3.<br>
+                <b>Special: </b>You can't select both the Fame feat and the Infamy feat. You're either famous 
+                or infamous, not both. <br>
+            </div>
+
+            <div id="farshot"><h4>Far Shot</h4><br>
+                You can get greater distance out of ranged weapon.<br>
+                <b>Prerequisite: </b>Point Blank Shot. <br><!-- add anchor -->
+                <b>Benefit: </b>When you use a blaster or projectile weapon (such as a bow), its range increment increase by one-half (multiply by 1.5). When you use a thrown weapon (such as a grenade), its range increment is doubled. <br>
+            </div>
+            
+            <div id="favordcustomer"><h4>Favored Customer</h4><br>
+                Your allegiance to the Confederacy has earned you favor int he eyes of its members and allows you to obtain items at a discount rate.<br>
+                <b>Prerequisite: </b>Confederacy of Independent Systems Sympathy +2<br>
+                <b>Benefit: </b>When dealing with businesses and manufactuerers that belong to the Confederacy, you pay only 80% of the normal cost of hte goods and services you have purchased. <br>
+                <b>Special: </b>If your Confederacy Sympathy drops below +2, you lose th e benefits of this feat. <br>
+            </div>
+            
+            <div id="fieldguide"><h4>Field Guide</h4><br>
+                You have the ability to lead groups of people when covering ground on field missions.<br>
+                <b>Prerequisite: </b>Wisdom 13+.<br>
+                <b>Benefit: </b>When using the trailblazing ability, the penalty toSurvival checks is reduced to -2 for every ten additional individuals in the group. <br>
+                <b>Special: </b>You must have joined the Antarian Rangers to take this feat, but you do not lose its benefits if you later leave the Antarian Rangers.<br>
+            </div>
+            
+            <div id="flightacademytraining"><h4>Flight Academy Training</h4><br>
+                Your knowledge of Imperial military tactics gives you an edge in starfighter combat.<br>
+                <b>Prerequisite: </b>Pilot 6 ranks. Starship Operation(starfighter)<br>
+                <b>Benefit: </b>When flying in a starfighter wing every pilot in the group adds a +1 circumstance bonus on Pilot checks to perform stunts. The bonus is cumulative if multiple pilots in the same wing have this feat; the maximum bonus is +4 , regardless of the size of the starfighter wing. <br>
+                <b>Special: </b>You must hav ejoine dthe Empire to take this feat, but you do not lose its benefits if you later leave the Empire. <br>
+            </div>
+
+            <div id="forcesensitive"><h4>Force-Sensitive</h4><br>
+                You are sensitive to the ebba nd flow of the Force. Though not necessarily a jedi or a 
+                Force-user, you are capable of learning some basic Force skils.<br>
+                <b>Prerequisite: </b>Force-Sensitive <br><!-- add anchor -->
+                <b>Benefit: </b>You may learn Force-Sensitive-based Force skills as class skislls. if you have 
+                any Force-user levels (levels in any of the Force-using classes), you may select other 
+                Force-based feats when the opportunity arises.<br>
+                You gain one bonus Force point when this feat is selected. There is no limit ot the number of 
+                Force Points a character with this feat may possess. <br>
+                You are more adept at calling upon the Force to use a Force Point<br>
+                A Force-sensitive character (one who has the Force-Sensitive feat) can make a Wisdom check (DC 
+                20) to avoid being surprised. A successful check allows you to act during the surprise round, 
+                even if you would otherwise be surprised.<br>
+                This feat also allows characters to begin the training necessary to eventually take up the 
+                mantle of a Force-user. Witht his feat and a qualified teacher, a character can start to learn 
+                the fundamentals of the primary Force feats (Alter, Control, and Sense)<!-- add anchor --> 
+                without actually gaining any of the formidable powers associated with them. All of the 
+                children learning at the Jedi temple, for example, use this feat to help them through their 
+                various studies (including lightsaber training) until they are selected by a single master to 
+                serve as a Padawan learner (and thus gain their status as a 1st-level jedi consular or Jedi 
+                guardian).<br>
+                <b>Normal: </b>Without this feat, you cannot gain any ranks in Force skills or select toehr   
+                Force-based feats. Also, your maximum allowed total of Force Points is 5 (any points gained 
+                beyond this maximum are lost). <br>
+                <b>Special: </b>Not everyone who selects thisf eat believes in the Force. A character cang ain 
+                the benefits of this feat and its associated skills without understanding that he or she is 
+                callign upon the Force. Such characters instead attribute their success to luck. Such 
+                characters instead attribute their success to luck, a special knack, or some other reason when 
+                they take advantage of this feat.<br>
+                Force adepts, Jedi consulars, and Jedi guardians gain this feat for free at 1st level. A 
+                character who decides to pick up a Force-user level later in his or her career must adhere to 
+                the rules for multiclassing and starting feats <br>
+            </div>
+
+            <div id="frightfulpresence"><h4>Frightful Presence</h4><br>
+                Your mere presence can terrify those around you.<br>
+                <b>Prerequisite: </b>Charisma 15, Intimidate 9 ranks.<br>
+                <b>Benefit: </b>Once per round you can, as a free action, use your Frightful Presence. All 
+                opponents within 10 meters who have fewer levels than you must make a Will saving throw (DC 10 
+                + one-half your level + your Charisma modifier). An opponent who fails his save is shaken, 
+                taking a -2 penalty on attack rolls, saves, and skill checks for a number of rounds equal to 
+                1d6 + your Charisma modifier. <br>
+                A successful save indicates that the opponent is immune to your Frightful Presence for one 
+                day. This ability can't affect creatures with an Intelligence of 3 or lower.<br>
+                If you have the Infamy feat, the Will saving throw's DC increases by 5.<!-- add anchor -->
+            </div>
+
+            <div id="gearhead"><h4>Gearhead</h4><br>
+                You have a way with machines.<br>
+                <b>Benefit: </b>You get a +2 aptitude bonus on all Repair checks, and Computer Use, checks. <br>
+                If you don't have any ranks in Repair, this aptitude bonus can only be 
+                applied to jury-rig attempts.<br>
+                If you don't have any ranks in Computer Use, this aptitude bonus can't be 
+                applied to the rbeak computer security use of the skill.
+            </div>
+
+            <div id="greatcleave"><h4>Great Cleave</h4><br>
+                You can wield a melee weapon with such power that you can strike multiple times when you drop 
+                your opponents.<br>
+                <b>Prerequisite: </b>Strength 13, Power Attack, Cleave, base attack bonus +4.<br>
+                <b>Benefit: </b>As cleave, except that you have no limit to the number of times you can use it 
+                per round.<br>
+            </div>
+
+            <div id="greatfortitude"><h4>Great Fortitude</h4><br>
+                You are tougher than normal.<br>
+                <b>Benefit: </b>You get a +2 synergy bonus on all Fortitude saving throws. <br>
+            </div>
+
+            <div id="guncrewchief"><h4>Gun Crew Chief</h4><br>
+                You are accustomed to commanding starships and their crews, and have learned to use your 
+                talent for leadership to its full ability when in space engagements.<br>
+                <b>Prerequisite: </b>Inspire confidence class feature.<br>
+                <b>Benefit: </b>When using the inspire confidence class feature on a starship's crew, those 
+                affected by the ability deal one more damage die of the appropriate type with starship 
+                weapons. For example. when f1ring a weapon that deals 4d10 x 2 points of damage normally, an 
+                inspired character deals 5d10 x 2 points of damage with that weapon. <br>
+                <b>Normal: </b>A character without this feat only grants a +1 bonus to damage regardless of 
+                the type of weapon being used. <br>
+            </div>
+
+            <div id="gunner"><h4>Gunner</h4><br>
+                You are particularly skileld at operating a starship's weapons.<br>
+                <b>Benefit: </b>You take no penalty on attack rolls when operating starship weapons on an 
+                class starship. If you're firing on a ship that's at point blank range from an ally (such as 
+                one that's engaged in a dog-fight), you are at greater than point blank range, you suffer no 
+                attack penalty.<br>
+                <b>Normal: </b>Characters who do not have this feat suffer a -4 penalty on the operation of 
+                starship weapons unless they have the apporpriate Starship Operation feat. Also, characeters 
+                without this feat firing on a target within point blank range of an ally suffer a -4 penalty 
+                on attack rolls when firing from a range greater than point blank. <br>
+            </div>
+
+            <div id="headstrong"><h4>Headstrong</h4><br>
+                You are obstinate and unwilling to yield.<br>
+                <b>Benefit: </b>You get a +1 synergy bonus on all Wills aving throws and a +2 bonus on all Intimidate checks.<br>
+            </div>
+            
+            <div id="heartofvengeance"><h4>Heart of Vengeance</h4><br>
+                A desire to right the wrongs done to your people burns in your heart and vies you the resolve to do what normal beings cannot.<br>
+                <b>Prerequisite: </b>Mistryl Sympathy +5<br>
+                <b>Benefit: </b>Once per day when reduced to 0 vitality points, you may make a Will save (DC 15) to give yourself 2d8 vitality points. These vitality points last for a number of rounds equal to your character level. At the end of this duration, you lose the bonus vitality poitns and are fatigued (-2 penalty on Strenght and Dexterity, can't run or charge) for the rest of the day. <br>
+            </div>
+
+            <div id="heroicsurge"><h4>Heroic Surge</h4><br>
+                You can perform an additional action in a round.<br>
+                <b>Benefit: </b>You may take an extra move action or attack action, either before or after 
+                your regular actions. You may use Heroic Surge a number of times per day depending on your 
+                character level (as shown below) , but never more than once per round. <br>
+                <table>
+                    <tr>
+                        <th>Level</th>
+                        <th>Times per day</th>
+                    </tr>
+                    <tr>
+                        <td>1st-4th</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>5th-8th</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>9th-12th</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>13th-16th</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>17th-20th</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="highculture"><h4>High Culture</h4><br>
+                You are steeped in the refined pursuits of life, from genteel sports and the theater to music 
+                and literature. You are schooled form an early age to not only appreciate such things but you 
+                also participate in them.<br>
+                <b>Prerequisite: </b> <br>
+            </div>
+            
+            <div id="huttfavor"><h4>Hutt Favor</h4><br>
+                Your value has not gone unnoticed by the Hutts. Should you need a favor of them, they might well comply<br>
+                <b>Prerequisite: </b>Hutt Sympathy +1<br>
+                <b>Benefit: </b>You can ask a favor form a Hutt. Roll 1d20, add your Hutt Sympathy rating, and add your favor bonus (if applicable). If the total equals or exceeds the DC set by the GM, the Hutt grants your favor, but you lose a point of Hutt Sympathy. <br>
+                <b>Special: </b>You do not lose this feat if your Hutt Sympathy score is reduced to 0: you simply cannot use it again until your Hutt Sympathy score equals +1 or more. <br>
+            </div>
+            
+            <div id="#imperialcommandtraining"><h4>Imperial Command Training</h4><br>
+                By studying Imperial military theory, you have learned effective command techniques.<br>
+                <b>Benefit: </b>When uysing hte leadership class ability of the officer prestige class, you may take 10 on the required Diplomacy check, even if stress and distractions would normally prevent you from doing so. <br>
+                <b>Special: </b>You must have joined the Empire to take this feat, but you do not lose it if you later leave the Empire. This feat is of no use to any character without the 1st-level officer's leadership ability <br>
+            </div>
+
+            <div id="impersonator"><h4>Impersonator</h4><br>
+                You are able to create a new identiy for yourself or assume the role of another being with 
+                great skill.<br>
+                <b>Benefit: </b>You gaina  +2 aptitude bonus on all Disguise and Forgery checks. <br>
+            </div>
+
+            <div id="improvedbantharush"><h4>Improved Bantha Rush</h4><br>
+                You know how to push opponents back.<br>
+                <b>Prerequisite: </b>Strength 13. Power Attack. <br>
+                <b>Benefit: </b>When you perform a bantha rush (see page 169), you do not draw an attack of 
+                opportunity from the defender.<br>
+            </div>
+
+            <div id="improvedcritical"><h4>Improved Critical</h4><br>
+                Choose one type of weapon, such as a blaster pistol or a vibrobalde. WIth that weapon, you 
+                know how to strike more effectively and have a better chance of dealing wound damage.<br>
+                <b>Prerequisite: </b>Proficient with weapon, base attack bonus +8. <br>
+                <b>Benefit: </b>When using the weapon you selected, your threat range increases by 1. For 
+                example a blaster pistol usually threatens a critical hit ona  natural roll of 20. If a 
+                character using a blaster pistol has improved Critial (blaster pistol), the threat range 
+                becomes 19-20. <br>
+                <b>Special: </b>You cna gain this feat multiple times. The effects do not stack. Each time you 
+                take this feat, it applies to a different weapon. <br>
+            </div>
+
+            <div id="improveddisarm"><h4>Improved Disarm</h4><br>
+                You know how to disarm opponents in melee combat.<br>
+                <b>Prerequisite: </b>Intelligence 13, Combat Expertise. <br>
+                <b>Benefit: </b>You do not draw an attack of opportunity when you attempt to disarm an 
+                opponent, nor does the opponent get a chance to disarm you. <br>
+                <b>Normal: </b>See the normal disarm rules in Chapter eight: Combat, page 169.<!--Add Anchor--><br>
+            </div>
+
+            <div id="improvedeffort"><h4>Improved Effort</h4><br>
+                Making an extreme effort doesn't take as much out of you.<br>
+                <b>Prerequisite: </b>Scout level 5th. <br>
+                <b>Benefit: </b>You do not become fatigued after using the extreme effort class ability. <br>
+                <b>Normal: </b>After making an extreme effort, the scout becomes fatigued until the end of the 
+                current encounter.<br>
+            </div>
+
+            <div id="improvedfeint"><h4>Improved Feint</h4><br>
+                You are skilled at misdirecting your opponent's attention in combat.<br>
+                <b>Prerequisite: </b>Intelligence 13, Combat Expertise. <br>
+                <b>Benefit: </b>You can make  Bluff feint in combat as a move action. You 
+                also get a +2 bonus on Bluff checks made to feint in combat.<br>
+                <b>Normal: </b>Feinting in combat requries an attack aciton. <br>
+                <b>Special: </b>A solider or Jedi guardian may select this feat as on of his bonus feats.<br>
+            </div>
+
+            <div id="improvedgrapple"><h4>Improved Grapple</h4><br>
+                You are skilled at grappling opponents.<br>
+                <b>Prerequisite: </b>Dexterity 13, Improved Martial Arts. <br>
+                <b>Benefit: </b>You do not provoke an attack of opportunity when you make a touch attack to 
+                start a grapple. You also get a +4 bonus on all grapple checks (regardless of whether you 
+                started the grapple). <br>
+                <b>Normal: </b>Characterw tihout this feat incur an attack of opportunity when they make a 
+                touch attack to start a grapple.<br>
+                <b>Special: </b>A soldier may select this feat as one of his soldier bonus feats. <br>
+            </div>
+
+            <div id="improvedmartialarts"><h4>Improved Martial Arts</h4><br>
+                You are more skilled at unamred attacks due to your improved training.<br>
+                <b>Prerequisite: </b>Martial Arts, base attack bonus +4. <br>
+                <b>Benefit: </b>A Medium-size character deals 2d4 damage with an unarmed strike. Strength 
+                modifiers apply. Also, you threaten a criti al hit on a natural 19 or 20 when making an 
+                unarmed attack. <br>
+                Small characters deadl 2d3 points of damage and Large characters deal 2d6 points of damage
+                with an unarmed strike and this feat.
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="improvedoverrun"><h4>Improved Overrun</h4><br>
+                You are skilled a tknowing down opponents.<br>
+                <b>Prerequisite: </b>Strength 13, Power Attack.<br>
+                <b>Benefit: </b>When you attempt to overrun an opponent, the target may not choose to avoid 
+                you. You also gaina  +4 bonus on the Strength check to knock down your opponent.<br>
+                This feat does not grant you more attacks of opportunity than you are normally allowed in a 
+                round.
+                <b>Normal: </b>Without this feat, the target of an overrun can choose to avoid you or to block 
+                you.<br>
+                <b>Special: </b>A soldier may select this feat as one of his soldier bonus feats.<br>
+            </div>
+
+            <div id="improvedtrip"><h4>Improved trip</h4><br>
+                You are trained in tripping opponents in melee combat and following through with an attack.<br>
+                <b>Prerequisite: </b>Intelligence 13, Combat Expertise<br>
+                <b>Benefit: </b>If you trip an opponent in melee combat, you immediately get to make a melee attack against that opponent as if you had not used your attack action for the trip attempt.
+                <b>Normal: </b>See the nroaml trip rules<br>
+            </div>
+
+            <div id="improvedtwoweaponfighting"><h4>Improved Two-Weapon Fighting</h4><br>
+                You are an expert in fighting two-handed.<br>
+                <b>Prerequisite: </b>Two Weapon Fighitng, Ambidexterity, base attack bonus +9. <br><!-- add 
+                anchor -->
+                <b>Benefit: </b>In addition to the standard single extra atack you get with an off-hand 
+                weapon, you get a second attack with the off-hand weapon, albeit at a -5 penalty (see table 
+                8-3: Two-Weapon Fighting Penalties, page 157). <br>
+                <b>Normal: </b>Without this feat, you can only get a single extra attack with an off-hand 
+                weapon. <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="improvisationalfighting"><h4>Improvisational Fighting</h4><br>
+                In your hands, everythign is an effective weapon.<br>
+                <b>Prerequisite: </b>Dexterity 15, Martial Arts.<br>
+                <b>Benefit: </b>You do not suffer the usual -4 penalty for wielding an improvised weapon. The 
+                range increment for thrown objects is still 4 meters.<br>
+                <b>Normal: </b>When wielding an improvised weapon, you take a -4 penalty on attack rolls. 
+                Hurled improvised weapons have a range increment of 4 meteres. <br>
+            </div>
+
+            <div id="infamy"><h4>Infamy</h4><br>
+                You are known for crimes or evil deeds (whether you actually committed these crimes and evil 
+                deeds are not).<br>
+                <b>Benefit: </b>Your Reputation bonus increases by +3. <br>
+                <b>Special: </b>You can't select both the Fame feat and the Infamy feat. You're either famouse 
+                or infamous, noth both. <br>
+            </div>
+
+            <div id="influence"><h4>Influence</h4><br>
+                You have a knack for getting the desire result and swaying opinions.<br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>You get a +2 synergy bonus on all Reputation checks (see page 122) and favor 
+                checks (see the noble class description, page 42).<br>
+            </div>
+            
+            <div id="informationdebt"><h4>Information Debt</h4><br>
+                The Bothan Spynet owes you some favors, which it can repay in information<br>
+                <b>Prerequisite: </b>Bothan Sympathy +1<br>
+                <b>Benefit: </b>You can ask a favor form the Bothan Spynet. This fabor must be in the form of information, rather than goods or services. Roll 1d20, add your Bothan Sypmathy rating, and add your favor bonus (if applicable). If the total equals or exceeds the DC set by the GM, th Bothan Spynet grants your favor, but you lose a point of Bothan Sympathy.<br>
+                <b>Special: </b>You do not lose this feat if your Bothan Sympathy is reduced to 0; you simply cannot use it again until your Bothan Sympathy bonus is +1 or higher. <br>
+            </div>
+
+            <div id="inventor"><h4>Inventor</h4><br>
+                You are abel to design and create items of eceptional quality and can do so with ease and 
+                confidence.<br>
+                <b>Prerequisite: </b>Tech specialty (mastercrafter). <br>
+                <b>Benefit: </b>When using the mastercrafter class feature, you are only required to pay 1/3 
+                the ordinary item's cost in XP. <br>
+                <b>Normal: </b>A character without this feat must pay 1/2 the ordinary item's cost in XP to 
+                make a mastercraft item. <br>
+            </div>
+
+            <div id="ironwill"><h4>Iron Will</h4><br>
+                You have a stronge rwill than normal.<br>
+                <b>Benefit: </b>You get a +2 synergy bonus on all Will saving throws. <br>
+            </div>
+            
+            <div id="jedihunter"><h4>Jedi Hunter</h4><br>
+                You have learned the best techniques to track or capture members of the Jedi Order<br>
+                <b>Prerequisite: </b>Base attack bonus +8, Knowledge (jedi lore) 4 raks, Track<br>
+                <b>Benefit: </b>WHen tracking a Jedi, you gain a +2 aptitude bonus on all Survival checks used in conjunction with the Track feat. Additionally, you gain a +1 aptitude bonus on attack rolls against Jedi.<br>
+            </div>
+            
+            <div id="jedipetitioner"><h4>Jedi Petitioner</h4><br>
+                You have connections iwthin the Jedi Order and have enough pull to gain an audience with the Jedi Council. You can gani this audience on fairly short notice.<br>
+                <b>Prerequisite: </b>Antarain Ranger Sympathy +5<br>
+                <b>Benefit: </b>Provided you have access to appropriate communications channels (a subspace transciever, for example) and adequate transportation to Coruscant, you can reach the Jedi Temple and reqeust and audience, which will be granted in 1d10 x>5 hours of making the request.<br>
+                &emsp;Being granted an audience iwth the Jedi Council does not automatically guarantee that any requests made of them will be granted. While the Jedi caan provide resoruces, support, and even offasional direct help, the Council rarely grants any more assistance to a non-Jedi than it would a young Padawan.<br>
+                <b>Normal: </b>Petitioning the Jedi Council can take days or even weeks, and even then an audience is rarely granted to non-Jedi.<br>
+            </div>
+
+            <div id="kitbashing"><h4>Kit-Bashing</h4><br>
+                Your technical expertise allows you to assemble simple devices out of scavenged parts.<br>
+                <b>Prerequisite: </b>Intelligence 15, Repair 8 ranks.<br>
+                <b>Benefit: </b>By cannibalizing available components from other equipment, you can construct 
+                a primitive, limited-use version of a weapon, electronic device, or very rudimentary vehicle. 
+                The device you build has only limited lifespan, after which the components become useless for 
+                any other purpose (including further kit-bashing). Thus, for example, if you aremove the 
+                energy cell from a commlink to create a crude vibrodagger, at the end of the weapon's 
+                lifespan, the energy cell cannot simply go back into the commlink to make that device useable 
+                again. <br>
+                Use table Kit-Bashing to determine the Repair check DC, the components 
+                needed, the time rquired to finish construction, and hte opertaionallifepsan of the device oyu 
+                construct.<br>
+                <table>
+                    <tr>
+                        <th>Device</th>
+                        <th>Repair DC</th>
+                        <th>Components Needed</th>
+                        <th>Time Needed</th>
+                        <th>Operational Lifespan</th>
+                    </tr>
+                    <tr>
+                        <td>Blaster pistol<super>1</super></td>
+                        <td>18</td>
+                        <td>barrel, power pack, trigger, collimating crystal</td>
+                        <td>30 minutes</td>
+                        <td>1 shot per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Breath mask</td>
+                        <td>13</td>
+                        <td>Mouthpiece, regulator, air supply</td>
+                        <td>5 minutes</td>
+                        <td>1 minute per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Comlink</td>
+                        <td>13</td>
+                        <td>Acoustic sensor, speaker, energy cell</td>
+                        <td>10 minutes</td>
+                        <td>1 minute per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Datapad</td>
+                        <td>13</td>
+                        <td>Display, interface, energy cell</td>
+                        <td>30 minutes</td>
+                        <td>5 minute sper point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Fusion lantern</td>
+                        <td>13</td>
+                        <td>Chemical reactant, energy cell</td>
+                        <td>5 minutes</td>
+                        <td>5 minutes per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Glow rod</td>
+                        <td>10</td>
+                        <td>Chemical reactant</td>
+                        <td>1 minute</td>
+                        <td>10 minutes per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Ion pistol<super>1</super></td>
+                        <td>15</td>
+                        <td>Barrel, ion accelerator, trigger, power pack</td>
+                        <td>10 minutes</td>
+                        <td>1 shot per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Speeder<super>2</super></td>
+                        <td>23</td>
+                        <td>Repulsorlift engine, fuel, thrusters, brakes, power pack</td>
+                        <td>12 hours</td>
+                        <td>1 hour per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>Stun baton</td>
+                        <td>13</td>
+                        <td>Metal club, power pack, grip</td>
+                        <td>5 minutes</td>
+                        <td>1 attack per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td>vibrodagger</td>
+                        <td>15</td>
+                        <td>Blade, energy cell, handle</td>
+                        <td>10 minutes</td>
+                        <td>1 attack per point of Int bonus</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">1 Ranged weapons constructed in this fashion have half their normal 
+                        range increment.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">2 Treat this as a speeder bike similar to the ikas-Adon 22-B 
+                        nightfalcon, except that is has a speed of 40 meters, a maximum velocity of 150km/h, 
+                        and 10 hull points (wtih no DR).</td>
+                    </tr>
+                </table>
+                <b>Special: </b>You must have a Craft specialty related to the device you 
+                are attempting to build. For example, to build a crude datapad, you must have the Craft (electronic devices) skill.<br>
+                A fringer can select this feat as one of his fringer bonus feats.<br>
+            </div>
+
+            <div id="lesserblindsight"><h4></h4><br>
+                You can sense nearby opponents int he darkenss.<br>
+                <b>Prerequisite: </b>Wisdom 15, base attack bonus +4, Blind-Fight.<br>
+                <b>Benefit: </b>Using senses such as acute hearing and sensitivity to vibrations, you detect 
+                the location of opponents who are no more than 2 meters away from you. Concealment and 
+                darkenss are irrelevant, though you cannot discern nonphysical beings. <br>
+            </div>
+
+            <div id="lightningreflexes"><h4>Lightning Reflexes</h4><br>
+                You have faster than normal reflexes.<br>
+                <b>Benefit: </b>You gt a +2 synergy bonus on all Reflex saving throws. <br>
+            </div>
+
+            <div id="lithe"><h4>Lithe</h4><br>
+                You are particularly flexible and poised.<br>
+                <b>Benefit: </b>You gain +2 aptitude bonus on all Balance and Escape Artist checks.<br>
+            </div>
+
+            <div id="livinghistory"><h4>Living History</h4><br>
+                The past, far from being an irrelevant collection of moldering facts, is a living resource oyu 
+                draw from in all walks of life.<br>
+                <b>Prerequisite: </b> <br>
+                checks.<br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="lowprofile"><h4>Low Profile</h4><br>
+                You are less famous than others of your class and level, or you wish to maintain a less 
+                visible presence than others of your staiton.<br>
+                <b>Benefit: </b>You take a -2 penalty on all Reputation checks. <br>
+            </div>
+
+            <div id="maneuverexpertise"><h4></h4><br>
+                You have mastered one particular starship maneuver.<br>
+                Pilot check for that maneuver, you recive a +5 competence bonus.  <br>
+                <b>Special: </b>You can gain thi feat multiple times. its effects do not stack. Each time you 
+                take the feat, it applies ot a different maneuver.<br>
+            </div>
+
+            <div id="martialarts"><h4>Martial Arts</h4><br>
+                You are silled at fighting while unarmed and can deal more damage with unarmed strikes. You 
+                are also capable of inflicting critical hits with unarmed attacks.<br>
+                <b>Benefit: </b>A Medium-size character deals 1d4 points of damage with unarmed stirke. 
+                Strength modifiers apply. Also you threaten a critical hit on a natural 20 when makign an 
+                unarmed attack. <br>
+                Small characters deal 1d3 points of damage and Large characters deadl 1d6 poitns of damage 
+                with unarmed strike and this feat.<br>
+                A character with the Martial Arts feat does not provoke an attack of opportunity when making 
+                an unarmed attack against an armed opponent, but an opponent does provoke an attack of 
+                opportunity when making an unarmed attack against a character with the Martial Arts feat.
+                <b>Normal: </b>Without this feat, a Medium-size character deals only 1d3 poitns of damage (1d2 
+                for Small character and 1d4 for a Large character) and can't inflict a critical hit with an 
+                unarmed attack. <br>
+            </div>
+
+            <div id="merchanttrader"><h4>Merchant Trader</h4><br>
+                You come from a family that excels at particular trade and knows the value of any kind of 
+                trade good or commodity.<br>
+                <b>Benefit: </b>You gain a +2 aptitude bonus on all Appraise checks and a 
+                +2 aptitude bonus on checks in one Craft skill of your choice.<br>
+                <b>Special: </b>This feat may only be taken at 1st level. <br>
+            </div>
+
+            <div id="mobility"><h4>Mobility</h4><br>
+                You are skilled at dodging past opponents and avoiding attacks they make against you.<br>
+                <b>Prerequisite: </b>Dexterity 13, Dodge. <br>
+                <b>Benefit: </b>You get a +4 dodge bonus to Defense against attacks of opportunity caused when 
+                you move out of, through, or within a threatened area.<br>
+                <b>Special: </b>A condition that makes you lose your Dexterity bonus to Defense (if any) also 
+                makes you lose dodge bonuses. Also, dodge bonuses stack with each other, unlike most other 
+                types of bonuses. <br>
+            </div>
+
+            <div id="mountedcombat"><h4>Mounted Combat</h4><br>
+                You are skileld in mounted combat<br>
+                <b>Prerequisite: </b>Ride 1 rank.<br>
+                <b>Benefit: </b>Once per round when your mount is hit in combat, you may make a Ride check to negate the hit. The hit is negated if your Ride check 
+                is greater than the attack roll (essentially, the Ride check becomes the 
+                mount's Defense Bonus if its higher than the mount's regular Defense).<br>
+                <b>Special: </b>A solider can choose this feat as one of his soldier bonus feats. <br>
+            </div>
+
+            <div id="multidexterity"><h4>Multi Dexterity</h4><br>
+                You ar eequally adept at using any of your hands.<br>
+                <b>Prerequisite: </b>Dexterity 15, more than two hands or manipulator appendages. <br>
+                <b>Benefit: </b>You ignore the -4 penalty on attack rolls, ability checks, and skill checks 
+                when using an off hand. <br>
+                <b>Normal: </b>Without this feat, a character with more than two hands has only one priamry 
+                hand; the rest off hand takes a -4 penalty on attack rolls, ability checks, and skill checks. 
+                <br>
+                <b>Special: </b>This feat is the same as Ambidexterity for characters with more than two 
+                hands. 
+                </b> <br>
+            </div>          
+
+            <div id="multiweaponfighting"><h4>Multiweapon Fighting</h4><br>
+                you can fight with a weapon in each hand.<br>
+                You can make one attack with each off-hand weapon in addition ot your nomal attack (or 
+                attacks) with the weapon in your primary hand. All of the attacks made on your turn must be 
+                the same-either all melee attacks or all ranged attacks.<br>
+                <b>Prerequisite: </b>More than two hands. <br>
+                <b>Benefit: </b>Your penalties for fighting with multiple weapons are reduced by 2. <br>
+                <b>Normal: </b>Without this feat, you take a -6 penalty on attack rolls with your primary 
+                weapon and a -10 penalty on attack rolls with your off-hand weapons(s). If all your off-hand 
+                weapons are light, these penalites are reduced by 2. <br>
+                <b>Special: </b>This feat is the same as Two-Weapon fighting for characters with more than two 
+                hands. <br>
+            </div>
+
+            <div id="multishot"><h4>Multishot</h4><br>
+                You can use the multifire and autofire option on blaster weapons with exceptional accuracy.<br>
+                <b>Prerequisite: </b>Dexterity 13, Point Blank Shot, Rapid Shot. <br>
+                <b>Benefit: </b>When using the multifire or autofire option on a blaster weapon, you reduce 
+                the penalty for each attack to -2 (for multifire) or -4 (for autofire). <br>
+                <b>Normal: </b>See the multifire and autofire rules in chapter Eight: Combat, page 165. <br>
+            </div>
+
+            <div id="nimble"><h4>Nimble</h4><br>
+                You have eceptional flexibility and manual dexterity.<br>
+                <b>Benefit: </b>You get a +2 aptitude bonus on all Escape Artist checks and 
+                Sleight of Hand skill can't be used untrained. <br>
+            </div>
+
+            <div id="offhandparry"><h4>Off-Hand Parry</h4><br>
+                You use your off-hand weapon to defend against melee attacks.<br>
+                <b>Prerequisite: </b>Dexterity 13, base attack bonus +3, Ambidexterity, Two-Weapon Fighting, 
+                proficiency with weapons. <br>
+                <b>Benefit: </b>When fighting with two melee weapons, you can designate a melee opponent 
+                during your action and recieve a +2 equipment bonus to Defense against attacks from that 
+                opponent. You can select a new melee opponent on any action. A condition that makes you lose 
+                your Dexterity bonus to Defense (if any) also makes you lose this bonus. <br>
+            </div>
+
+            <div id="peacemaker"><h4>Peacemaker</h4><br>
+                You are skilled at calming emotions and getting even the angriest people to listen to reason. <br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>You gian a +2 bonus on Diplomacy and Friendship checks.<br>
+            </div>
+
+            <div id="perfectmemory"><h4>Perfect Memory</h4><br>
+                You have an excellent recall of obscure details.<br>
+                <b>Prerequisite: </b>Intelligence 15.<br>
+                <b>Benefit: </b>You may make an Intelligence check with a +4 aptitude bonus to recall stray information about notable people, popular rumors or noteworthy places. You may not take 10 or 20 on this check. The relative obscurity of the information sets the DC of the check: DC 10 for common knowledge (known to most), DC 20 for uncommon details (known to locals or scholars), DC 25 for obscure data (known to a rare few), and DC 30 for extremely obscure information(forogtten lore). <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="persuasive"><h4>Persuasive</h4><br>
+                You have a way with words and body language.<br>
+                <b>Benefit: </b>You gain a +2 aptitude on all Bluff checks and Intimidate checks. <br>
+            </div>
+            
+            <div id="pieceoftheaction"><h4>Piece of the Action</h4><br>
+                The Hutts value your service so much thtat they occasionally reward you with a portion of their own profits.<br>
+                <b>Prerequisite: </b>Charisma 15+, Hutt Sympathy +4<br>
+                <b>Benefit: </b>At the conclusion of any successful mission undertaken on behalf of the Hutt cirminal syndicate, you receive a bonus equal to 250 credits x your character level x your Hutt Sympathy. You can take this bonus in the form of credits, goods, or services.<br>
+                &emsp;If you elect not to accept this bonus, your Hutt Sympathy increases by 1. <br>
+                <b>Special: </b>You must have joined the Hutt criminal syndicate to take this feat. If you later leave the Hutt criminal syndicate, you lose the benefits of this feat. <br>
+            </div>
+
+            <div id="pinpointaccuracy"><h4>Pinpoint Accuracy</h4><br>
+                You can fire a starship weapon more accurately than most, aiming for particularly vital parts 
+                of a target.<br>
+                <b>Prerequisite: </b>Base attack bonus +6 or higher. <br>
+                <b>Benefit: </b>On your action, before making any attack rolls for a round, you may choose to 
+                subtract a number from all starship weapon attacks and add the same number to the damage dealt 
+                to any target within point blank range. This number may not exceed your base attack bonus. The 
+                penalty on attacks and bonus on damage apply until your next action. <br>
+            </div>
+
+            <div id="politicalpull"><h4>Political Pull</h4><br>
+                You are able to use your influence and connections to get what you want with all possible speed.<br>
+                <b>Prerequisite: </b>Noble level 6th. <br>
+                <b>Benefit: </b>You gain a +2 bonus on all favor checks and +2 bonus on all Charisma checks when using the resource access feature when dealign with politicans.<br>
+            </div>
+
+            <div id="pointblankshot"><h4>Point Blank Shot</h4><br>
+                You are skilled at making well-placed shots with ranged weapons at close range.<br>
+                <b>Benefit: </b>You gaina +1 competence bonus on attack and damage rolls with ranged weapons 
+                against opponents within 10 meters of your position. <br>
+                <b>Normal: </b>Without this feat, only ranged attacks at targets within 2 meters of your 
+                position are considered to be made at point blank range. <br>
+                <div class="jediCounseling">
+                    <div class="question">Q: With the Point Blank Shot skill (which gives a hero a +1 bonus to hit and damage and increases the point blank range to 10 m), should the DC to avoid stun damage also be increased by +1?</div><br>
+                    <div class="answer">A: No. Point Blank Shot doesn't affect anything except attack and damage rolls.</div><br>
+                </div>
+
+            </div>
+
+            <div id="powerattack"><h4>Power Attack</h4><br>
+                You can make exceptionally powerful melee attacks.<br>
+                <b>Prerequisite: </b>Strenght 13. <br>
+                <b>Benefit: </b>On your aciton, before making attack rolls for a round, you may choose to 
+                subtract a number from all mmelee attack rolls and add the same number to all melee damage 
+                rolls. This number may not exceed your base attack bonus. The penalty on attacks and bonus on 
+                damage applies until your next aciton. <br>
+            </div>
+
+            <div id="preciseshot"><h4>Precise Shot</h4><br>
+                You are skilled at timing and aiming ranged attacks.<br>
+                <b>Prerequisite: </b>Point Blank Shot.<br>
+                <b>Benefit: </b>You can shoot or throw ranged weapons at an opponent engaged in melee without 
+                taking the standard -4 penalty (see Shooting or Throwing into a Melee, page 155). <br>
+            </div>
+            
+            <div id="premiercreditline"><h4>Premier Credit Line</h4><br>
+                Through a history of good credit, you have reduced your itnerest rate on your Corporate Sector account.<br>
+                <b>Prerequisite: </b>Corporate Credit Line<br>
+                <b>Benefit: </b>When paying off your Corporate Seceotr credit debt, you pay only 100% of the cost of the goods and services you have purchased. <br>
+                <b>Normal: </b>When paying off a debt accrued with the Corporate Credit Line feat, you pay 125% of the cost of the goods and services you have purchased. <br>
+                <b>Special: </b>You must have joined the Corporate Sector to take this feat. If you later quit the service of the Corporate Secotr, you lsoe the benefits of this feat.<br>
+            </div>
+
+            <div id="quickdraw"><h4>Quick Draw</h4><br>
+                You are skilled at timing an aiming ranged attacks<br>
+                <b>Prerequisite: </b>Base attack bonus +1. <br>
+                <b>Benefit: </b>You can draw a weapon as a free action instead of as a move action. <br>
+                <div class="jediCounseling">
+                    <div class="question">Q: My character has the Quick Draw feat. A goon has a blaster pulled and aimed at my character. My hero wants to pull out his own blaster and fire in the next round. Since he has Quick Draw, does a roll of initiative for the next round between the two characters determine who fires first?</div><br>
+                    <div class="answer">A: Technically speaking, yes, assuming they've not both already rolled initiative. Of course, if the goon has a blaster already out, then presumably he had surprise on your character and could fire first, before you even rolled initiative. You might want to rethink just how fast your character really is.</div><br>
+                </div>
+
+            </div>
+
+            <div id="quickness"><h4>Quickness</h4><br>
+                You are good at turning attacks that might deal damage to you into near misses and glancing 
+                blows.<br>
+                <b>Benefit: </b>You gain +3 vitality points. <br>
+                <b>Special: </b>You may gain this feat multiple times. <br>
+            </div>
+
+            <div id="rangeddisarm"><h4>Ranged Disarm</h4><br>
+                You can disarm from a distance.<br>
+                <b>Prerequisite: </b>Dexterity 13, Point Blank Shot, Precise Shot, base attack bonus +10. <br>
+                <b>Benefit: </b>Choose one type of ranged weapon with which you are already proficient. You 
+                can perform disarm action with this eapon. You do not draw an attack of opportunity wheny ou 
+                attempt to disarm an opponent from ta distance, but you do suffer a -4 penalty on the attack 
+                roll. You must be within 10 meters of the target to use this feat. Your wepaon is considered 
+                Medium-sized for the purpose of the opposed atttack roll. <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="rapidgunner"><h4>Rapid Gunner</h4><br>
+                You are particularly adept at firing your starhip's weapons rapidly.<br>
+                <b>Prerequisite: </b>Starship familiarity (as the starfighter ace and blockade runner class 
+                feature) or gunnery familiarity (as the master gunner class feature). <br>
+                <b>Benefit: </b>You may make a single meaneuver with your starship before making a full attack 
+                with one of its weapons, as longas you are "familiar" with that ship (as defined by blockade 
+                runner and starfighter ace class feature familiarity).<br>
+                <b>Normal: </b>A character making a full attack in starship cannot normally make any 
+                maneuvers. <br>
+            </div>
+
+            <div id="rapidshot"><h4>Rapid Shot</h4><br>
+                You can use ranged weapons with exceptional quickness.<br>
+                <b>Prerequisite: </b>Dexterity 13, Point Blank Shot.<br>
+                <b>Benefit: </b>You can get one extra attack per round with a ranged weapon. The attack is at 
+                your highest base attack bonus, but each attack (the extra one and the normal ones) has a -2 
+                penalty. You must use a full-round action to use this feat. <br>
+            </div>
+            
+            <div id="rebeltraining"><h4>Rebel Training</h4><br>
+                Your training with the Rebel Alliance has tought you uncommon self-sufficiency and dedication to the Rebel cause.<br>
+                <b>Prerequisite: </b>Wisdom 13.<br>
+                <b>Benefit: </b>Once per day, you can focus your determination to gain a circumstance bonus on any skill check, ability check, or attack roll. The bonus is equal to one-half your Rebel Sympathy (rounded down; minimum +1). You can decide to use this ability after making a die roll but before the GM reveals the result of the check or attack roll.<br>
+                <b>Special: </b>You must have joined the Rebel Alliance to take thsi feat, but you do not lose its benefits if you later leave the Rebel Alliance. <br>
+            </div>
+
+            <div id="redirectattack"><h4>Redirect Attack</h4><br>
+                You can redirect melee attacks toward adjacent enemies.<br>
+                <b>Prerequisite: </b>Dexterity 13, Dodge. <br>
+                <b>Benefit: </b>Once per round, when you are missed by a melee attack form an opponent 
+                designated as yourDodge target, you may redirect the attack to any other character adjacent to 
+                you and within the reach of the attacker. The attacker must roll a new attack roll for the 
+                redirected attack, using the same modifiers as the missed attack. <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b>A soldier or Jedi guardian may select this feat as one of his bonus feats.<br>
+            </div>
+
+            <div id="resistpoison"><h4>Resist Poison</h4><br>
+                You have built up resistance to the effects of poisons by exposing oyurself to controlled 
+                doses of various toxins.<br>
+                <b>Benefit: </b>You gain a +4 bonus on Fortitude saving throws against poison.<br>
+            </div>
+
+            <div id="ridebyattack"><h4>Ride-By Attack</h4><br>
+                You are skilled at fast attacks while riding an animal.<br>
+                <b>Prerequisite: </b>Ride 1 rank, Mounted Combat. <br>
+                <b>Benefit: </b>When you ar mounted and use the charge action, you may move and attack as with 
+                a standard charge and then move again (continuing the straight line of the charge). Your total 
+                movement for the round can't exceed double your mounted speed. You and your mount do not 
+                provoke an attack of opportunity from the opponent that you attack. <br>
+                <b>Special: </b>A soldier can choose this feat as one of his soldier bonus feats.<br>
+            </div>
+
+            <div id="rogueheritage"><h4>Rogue Heritage</h4><br>
+                You come from a long line of scoundrels, pirates, smugglers, and outlaws. You tend to think 
+                beyond rules and laws and easily adapt to adversity.<br>
+                <b>Benefit: </b>You gaina  +1 bonus on all Bluff, Gamble 
+                and Intimidate checks when dealing with an individual affected (either 
+                positively or negatively) by your reputation.<br>
+                <b>Special: </b>This feat may only be taken at 1st level. <br>
+            </div>
+
+            <div id="selfsufficient"><h4>Self-Sufficient</h4><br>
+                You cna take care of yourself in harsh environments and situations.<br>
+                <b>Benefit: </b>You gain a +2 aptitude bonus on all Survival and Treat Injury checks.<br>
+                <b>Special: </b>A fringer or scout may select this feat as one of his bonus feats. <br>
+            </div>
+
+            <div id="shadymerchant"><h4>Shady Merchant</h4><br>
+                You know someone who buys stolen merchandise. a "fence" who specializes in reselling 
+                merchandise of dubious origin. He might be an otherwise legitimate businessman, a smuggler, a 
+                crime broker, or even a minor crime lord. Of course, selling stolen merchandise to a fence 
+                means that you sacrifice some of the merchandise's total value in exchange for unloading the 
+                goods quickly-which can be crucial if the authorities are actively looking for them and you 
+                don't want any incriminating evidence (such as stolen property) lying around.<br>
+                <b>Benefit: </b>A fence can take delivery of stolen merchandise within 2d4 hours. plus 1d4 
+                hours per 5,000 credits of the merchandise's total value. (Delivering 25,000 credits worth of 
+                stolen weapons to a fence requires 6d4 hours before the fence is ready to accept it.) The 
+                fence pays 30% of the merchandise's value, but with a Diplomacy check (to which the 
+                scoundrel's illicit barter ability applies), the fence agrees to pay more, as follows: <br>
+                <table>
+                    <tr>
+                        <th>Diplomacy Check Result</th>
+                        <th>Fence pays:</th>
+                    </tr>
+                    <tr>
+                        <td>5-9</td>
+                        <td>35%</td>
+                    </tr>
+                    <tr>
+                        <td>10-14</td>
+                        <td>40%</td>
+                    </tr>
+                    <tr>
+                        <td>15-19</td>
+                        <td>45%</td>
+                    </tr>
+                    <tr>
+                        <td>20-24</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>25-29</td>
+                        <td>55%</td>
+                    </tr>
+                    <tr>
+                        <td>30-34</td>
+                        <td>60%</td>
+                    </tr>
+                    <tr>
+                        <td>35-39</td>
+                        <td>65%</td>
+                    </tr>
+                    <tr>
+                        <td>40+</td>
+                        <td>70%</td>
+                    </tr>
+                </table>
+                <b>Normal: </b>Without this feat, finding someone to buy stolen goods requires a Gather Information check (usually DC 20 for "restricted" information), with no 
+                guarantee that the sale isn't a trap.<br>
+                <b>Special: </b>A scoundrel may select this feat as one of his scoundrel bonus feats. <br>
+            </div>
+
+            <div id="shotontherun"><h4>Shot on the Run</h4><br>
+                You are highly trained in skirmish ranged weapon tactics.<br>
+                <b>Prerequisite: </b>Dexterity 13, Point Blank Shot, dodge, Mobility <br>
+                <b>Benefit: </b>When using an attack action with a ranged weapon, you can move both before and 
+                after the attack, provided that your total distance moved is not greater than your speed. 
+                Moving in this way does not provoke an attack of opportunity from the defender you are 
+                attacking.<br>
+                <div class="jediCounseling">
+                    <div class="question">Q: There's something a bit odd about the feat Shot on the Run. According to the text, "moving in this way does not provoke an attack of opportunity from the defender you're attacking." Does that mean that I can stand next to a droid with a vibro axe, for example, back up so I'm out of its threatened squares, fire at it, then move back so I'm adjacent to it again -- all without provoking an attack of opportunity?</div><br>
+                    <div class="answer">A: No. Shot on the Run seems to have some inadvertent and excess verbiage, and the last sentence of the feat will be dropped in a forthcoming errata.</div><br>
+                </div>
+            </div>
+            
+            <div id="sienarservicecontract"><h4>Sienar Service Contract</h4><br>
+                Your connections with Sienar Fleet Systems get you the best rate for starship repairs.<br>
+                <b>Prerequisite: </b>Sienar Fleet Systems Sympathy +2<br>
+                <b>Benefit: </b>When Sienar Fleet Systems technicians perform repairs on your starship, the cost is reduced by 10%. The cost is reduced by 25% if Sienar Fleet Systems manufactured your starship <br>
+                <b>Special: </b>This feat applies to any starship you own that utilizes Sienar Fleet systems parts. Sienar Fleet Systems individually codes all of its parts, so switching Sienar parts from one starship to another won't let you get a discount on multiple repair jobs. <br>
+            </div>
+
+            <div id="skeptical"><h4>Skeptical</h4><br>
+                You have a knack for separating truth from opinion and perception.<br>
+                <b>Prerequisite: </b>Wisdom 13. <br>
+                <b>Benefit: </b>You gain a +2 aptitude bonus on all Gather Information and 
+                Sense Motive checks.<br>
+            </div>
+
+            <div id="skillemphasis"><h4>Skill Emphasis</h4><br>
+                Choose a skill, such as Repair. You have a special knack with that skill.
+                <br>
+                <b>Benefit: </b>You get +3 competence bonus on all skill checks with tha tskill. <br>
+                <b>Special: </b>You can gain this feat multiple times, Its effects do not stack. Each time you 
+                take the feat, it applies to a different skill. This bonus does not allow you to make checks 
+                for a trained-only skill if you have no ranks in the skill. <br>
+            </div>
+
+            <div id="spacer"><h4>Spacer</h4><br>
+                You have a special affinity for space travel.<br>
+                <b>Benefit: </b>You ge ta +2 aptitude bonus on all Astrogate checks and Pilot checks. Remember that these skills can't be used untrained. <br>
+            </div>
+
+            <div id="spiritedcharge"><h4>Spirited Charge</h4><br>
+                You are trained at making a devastating mounted charge.<br>
+                <b>Prerequisite: </b>Ride 1 rank, Mounted Combat, Ride By Attack. <br>
+                <b>Benefit: </b>When mounted and using the charge action, you deal double damage with melee 
+                weapon (or triple damage with a spear, cesta or other polearm). <br>
+                <b>Special: </b>A solider can choose this feat as one of his soldier bonus feats.<br>
+            </div>
+
+            <div id="springattack"><h4>Spring Attack</h4><br>
+                You are trained in fast melee attacks and facny footwork.<br>
+                <b>Prerequisite: </b>Dexterity 13, Dodge, Mobility, base attack bonus +4.<br>
+                <b>Benefit: </b>When using an attack action with a melee weapon, you can move both before and 
+                after the attack, provided that your total distance moved is not greater than your speed. 
+                Moving in this way does not provoke an attack of opportunity from the defender you are 
+                attacking. You can't use this feat if you are carrying a heavy load or wearing heavy armor. 
+                <br>
+            </div>
+
+            <div id="stamina"><h4>Stamina</h4><br>
+                You have an amazing amount of stamina<br>
+                <b>Prerequisite: </b>Constitution 13. <br>
+                <b>Benefit: </b>You recover vitality points twice as fast as normal. So, if you would normally 
+                recover 1 vitality point per level per hour, with this feat you recover 2 vitality points per 
+                level per hour. A Wookie character with this feat recovers 4 vitality poitns per level per 
+                hour.<br>
+            </div>
+
+            <div id="starshipdodge"><h4>Starship Dodge</h4><br>
+                Select a class of starship (starfighter or space transport). You are adept at dodging attacks 
+                while piloting that class of starship.<br>
+                <b>Prerequisite: </b>Dexterity 13, Pilot 6 ranks, Starship Operation 
+                (starfighter) or Starship Operation (space transport). <br>
+                <b>Benefit: </b>When piloting a starfighter or space transport (depending on which class of 
+                starship you selected), during your action you designate an opposing starship and recieve a +1 
+                dodge bonus to Defense against attacks from that opponent. You can select a new opponent on 
+                any action.<br>
+                <b>Special: </b>You can gain this feat twice. Each time you take the feat, it applies to a 
+                different class of starship.<br>
+            </div>
+
+            <div id="starshipoperation"><h4>Starship Operation</h4><br>
+                Select a class of starship (starfighter, space transport, or capital ship). You are proficient 
+                at operating that class of starship.<br>
+                <b>Prerequisite: </b>Pilot 2 ranks. <br>
+                <b>Benefit: </b>You take no penalty on Pilot checks or attack rolls made when operating a 
+                starship of the selected class.<br>
+                <b>Normal: </b>Characters without this feat take a -4 penalty on Pilot 
+                checks made to operate a starship and on attacks made with starship weapons.<br>
+                <b>Special: </b>You can gain this feat multiple times. Each time you take the feat, it applies 
+                to a different class of starship. <br>
+            </div>
+
+            <div id="starshippointblankshot"><h4>Starship Point Blank Shot</h4><br>
+                Select a starship class (starfighter, space transport, or capital). You are skilled at making 
+                well-placed shots with eapons on starships of that class while firing at point blank range.<br>
+                <b>Benefit: </b>You get a +1 on attac and damage rolls with starfighter, space transport, or 
+                capital ship weapons (depending on which class of starship you selected) when attacking 
+                targets at point blank range. <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+            
+            <div id="starshippoweroverride"><h4>Starship Power Override</h4><br>
+                You have learned so much about starship design that you can adjust a ship's systems to exceed its standard operational parameters.<br>
+                <b>Prerequisite: </b>Intelligence 15, Craft 8 ranks, Starship Operation (any one)<br>
+                <b>Benefit: </b> <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="steady"><h4>Steady</h4><br>
+                You are sure in movement<br>
+                <b>Prerequisite: </b>You ge ta +1 synergy bonus on all Reflex saving throws and a +2 synergy 
+                bonus on all Balance checks. <br>
+            </div>
+
+            <div id="stealthy"><h4>Stealthy</h4><br>
+                You are particularly good at avoiding notice.<br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>You get a +2 aptitude bonus on all Hide checks and Move Silently checks. <br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="streetsmart"><h4>Street Smart</h4><br>
+                You lhave lived among the scum of the galaxy, in a place such as Tatooine, Kessel, or nearly 
+                anywhere in Hutt Space. You have learned how to keep informed, ask questions, and interact 
+                with the underworld without getting into trouble.<br>
+                <b>Benefit: </b>You gaina +2 aptitude bonus on all Bluff and Gather Information checks. <br>
+                <b>Special: </b>This feat may only be taken at 1st level. <br>
+            </div>
+
+            <div id="stunningstrike"><h4>Stunning Strike</h4><br>
+                You know how to incapacitate opponents using unarmed strike by hitting them in vulnerable 
+                areas.<br>
+                <b>Prerequisite: </b>Dexterity 13, Widsom 13, Improved Martial Arts, base attack bonus +8.<br>
+                <b>Benefit: </b>Declare that you are using this feat before you make your attack roll (thus, a 
+                missed attack roll ruins the attempt). It forces a foe damaged by your unarmed attack to make 
+                a Fortitude saving throv. (DC 10 + one-half your character level + your Wisdom modifier), in 
+                addition to dealing damage normally. If the defender fails his saving throw, he is stunned for 
+                1 round (until right before your next action). A stunned character can't act, drops anything 
+                he is holding. loses any Dexterity bonus to Defense, and suffers a -2 penalty to Defense. You 
+                may attempt a stunning strike once per day for every four levels you have attained, and no 
+                more than once per round. Creatures immune to critical hits cannot be stunned by the stunning 
+                attack. <br>
+                <b>Special: </b>A soldier or Jedi guardian may select this feat as one of his bonus feats.<br>
+            </div>
+
+            <div id="sunder"><h4>Sunder</h4><br>
+                You are skilled at attacking an opponent's weapon.<br>
+                <b>Prerequisite: </b>Strength 13, Power Attack. <br>
+                <b>Benefit: </b>When you strike an opponent's weapon in melee combat, you do not provoke an 
+                attack of opportunity (see page 157). <br>
+            </div>
+
+            <div id="superiorexpertise"><h4>Superior Expertise</h4><br>
+                You have mastered the art of defense in combat.<br>
+                <b>Prerequisite: </b>Intelligence 13, Combat Expertise, base attack bonus +6.<br>
+                <b>Benefit: </b>When you use the Combat Expertise feat to improve your Defense bonus, the 
+                number you subtract from your attack and add to your Defense bonus can be any number that does 
+                not exceed your base attack bonus.<br>
+                <b>Normal: </b>Without this feat, the number you can subtract from your attack and add to your 
+                Defense can be no greater than +5.<br>
+                <b>Special: </b>A soldier or Jedi guardian may select this feat as one of his bonus feats. <br>
+            </div>
+
+            <div id="surefooted"><h4>Surefooted</h4><br>
+                Because you are so good at finding the best path, surface conditions rarely slow you down.<br>
+                <b>Prerequisite: </b>Dexterity 13. <br>
+                <b>Benefit: </b>The speed penalties you suffer for hampered movement (see table 6-8 Hampered 
+                movement in the core book) are adjusted up by 1/4. Very bad surfraces only slow you to 1/3 
+                speed (rather than 1/4 speed), bad surfaces and heavy obstructions only slow you to 3/4 speed 
+                (rather than 1/2 speed), and moderate obstructions don't slow you down at all.<br>
+                <b>Normal: </b> <br>
+                <b>Special: </b> <br>
+            </div>
+
+            <div id="surgery"><h4>Surgery</h4><br>
+                You are trained to perform surgical procedures to heal wounds.<br>
+                <b>Prerequisite: </b>Treat Injury 4 ranks. <br>
+                <b>Benefit: </b>You can make a Treat Injury check to heal a wounded 
+                character. You must have the proper surgical tools. You can't take 10 or take 20 when 
+                attempting to heal wounds. You can't perform surgery during a combat situation. You can't 
+                restore more wound points than the character's full normal total.<br>
+                Surgery takes time; it requires 1 hour per wound point lost to perform surgery on a paitent. 
+                <br>
+                The result of the check detrmines the number of wound points restored. A character who has his 
+                wounds healed through surgery is fatigued for a number of hours equal to the number of wound 
+                points restored.
+                <table>
+                    <tr>
+                        <th>Result</th>
+                        <th>Wounds Restored</th>
+                    </tr>
+                    <tr>
+                        <td>5-9</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>10-14</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>15-19</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>20-24</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>25-29</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>30-34</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>35+</td>
+                        <td>7</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="technicalwizard"><h4>Technical Wizard</h4><br>
+                You are well trained in the sciences of mechanics and engineering.<br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>You gain a +2 aptitude bonus on Repair checks and to one of 
+                the following Knowledge skills: physics, engineering, or technology. <br>
+            </div>
+
+            <div id="toughness"><h4>Toughness</h4><br>
+                You are tougher than normal.<br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>you gain +3 wound points.<br>
+                <b>Normal: </b> <br>
+                <b>Special: </b>A character may gain this feat multiple times. <br>
+            </div>
+
+            <div id="track"><h4>Track</h4><br>
+                You can follow the trails of creatures and characters across most types of terrain.<br>
+                <b>Benefit: </b>To find tracks or to follow them for 1 kilometer requires a Survival check every time thet racks become difficult to follow. Such as when other tracks cross them or when the tracks backtrack and diverge.<br>
+                You move at half your nomal speed (or at your normal speed wiht a -5 penalty on the check). The DC depends on the surface and the prevailing conditions.
+                <table>
+                    <tr>
+                        <th>Surface</th>
+                        <th>DC</th>
+                    </tr>
+                    <tr>
+                        <td>Very soft</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Soft</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Firm</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Hard</td>
+                        <td>30</td>
+                    </tr>
+                </table>
+                <i>Very Soft Ground: </i>Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints. <br>
+                <i>Soft Ground: </i>Any surface soft enough to yield to pressure, but firmer than we mud or fresh snow, in which the quarry leaves frequent but shallow footprints.<br>
+                <i>Firm Ground: </i>Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or diry indoor surfaces (thick rugs, very dirty or dusty floors). The Quarry might leave some traces of its passage (broken branches, tufts of hair) but only occasional or partial foot-prints can be found. <br>
+                <i>Hard Ground: </i>Any surface that doesn't hold footprints at all, such as bare rock, concrete, metal deckings, or indoor floor. The quarry leaves only traces, such as scuff makrs. If you fail a Surival check, you can retry after 1 hour (out-doors) or 10minutes (indoors) of searching.<br>
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>DC Modifier</th>
+                    </tr>
+                    <tr>
+                        <td>Every 3 targets in the group being tracked</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Size of targets being tracked:<super>a</super></td>
+                    </tr>
+                    <tr>
+                        <td>Fine</td>
+                        <td>+8</td>
+                    </tr>
+                    <tr>
+                        <td>Diminutive</td>
+                        <td>+4</td>
+                    </tr>
+                    <tr>
+                        <td>   Tiny</td>
+                        <td>+2</td>
+                    </tr>
+                    <tr>
+                        <td>   Small</td>
+                        <td>+1</td>
+                    </tr>
+                    <tr>
+                        <td>   Medium-size</td>
+                        <td>+0</td>
+                    </tr>
+                    <tr>
+                        <td>   Large</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td>   Huge</td>
+                        <td>-2</td>
+                    </tr>
+                    <tr>
+                        <td>   Gargantuan</td>
+                        <td>-4</td>
+                    </tr>
+                    <tr>
+                        <td>   Colossal</td>
+                        <td>-8</td>
+                    </tr>
+                    <tr>
+                        <td>Every 24 hours since the trail was made</td>
+                        <td>+1</td>
+                    </tr>
+                    <tr>
+                        <td>Every hour of rain since the trail was made</td>
+                        <td>+1</td>
+                    </tr>
+                    <tr>
+                        <td>Fresh snow cover since the trail was made</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Poor visibility:<super>b</super></td>
+                    </tr>
+                    <tr>
+                        <td>   Overcast or moonless night</td>
+                        <td>+6</td>
+                    </tr>
+                    <tr>
+                        <td>   Moonlight</td>
+                        <td>+3</td>
+                    </tr>
+                    <tr>
+                        <td>   Fog or precipitation</td>
+                        <td>+3</td>
+                    </tr>
+                    <tr>
+                        <td>Tracked target hides trail (and moves at half speed)</td>
+                        <td>+5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><super>a</super>For a group of mixed sizes, apply only the modifier for the largest size category represented</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><super>b</super>Apply only the largest modifier from this category</td>
+                    </tr>
+                </table>
+                <b>Normal: </b>A character without this feat can use the Search skill to find tracks, but can only follow tracks if the DC is 15 or lower.<br>
+                <b>Special: </b> <br>
+                <div class="jediCounseling">
+                    <div class="question">Q: How long does a Survival check take when following tracks with the Track feat? I believe you can take 20 for this, so I need to know how long that will take.</div><br>
+                    <div class="answer">A: That seems to be an omission in the feat description. Assume that each check to Track takes one minute, so taking 20 on the check takes 20 minutes.</div><br>
+                </div>
+            </div>
+
+            <div id="traderoutefamiliarity"><h4>Trade Route Familiarity</h4><br>
+                You know the quickest paths along a trade route and re able to shave valuable time off of 
+                hyperspace travel.<br>
+                <b>Prerequisite: </b>Astrogate 3 ranks.<br>
+                <b>Benefit: </b>When calculating hyperspace travel times, you gain a +4 bonus on all Astrogate checks if both the starting point and destination are along a known 
+                hyperspace trade route.<br>
+            </div>
+
+            <div id="trick"><h4>Trick</h4><br>
+                You are cunning and deceptive.<br>
+                <b>Prerequisite: </b>You get a +2 aptitude bonus on all Bluff checks and Gamble checks.<br>
+            </div>
+
+            <div id="trustworthy"><h4>Trustworthy</h4><br>
+                You have a friendly demeanor.<br>
+                <b>Prerequisite: </b> <br>
+                <b>Benefit: </b>You get a +2 aptitude bonus on all Diplomacy and Gather Information checks.<br>
+            </div>
+
+            <div id="twoweaponfighting"><h4>Two-Weapon Fighting</h4><br>
+                You can fight with a weapon in each hand. You can make one extra attack each round with the 
+                second weapon. Both weapons must make the same kind of attack, either both ranged attacks or 
+                both melee attacks.<br>
+                <b>Benefit: </b>Your penalties for righting with two weapons are lessened by 2.<br>
+                <b>Normal: </b>See Attacking with Two Weapons on page 156, and Table 8-3: Two-Weapon Fighting 
+                Penalties<br>
+                <b>Special: </b>The Ambidexterity feat lessens the attack penalty for the second weapon by 4. 
+                <br>
+            </div>
+
+            <div id="unbalanceopponent"><h4>Unbalance Opponent</h4><br>
+                You are skilled at keeping your opponents off balance in melee combat.<br>
+                <b>Prerequisite: </b>Defensive Martial Arts, base attack bonus of +6.<br>
+                <b>Benefit: </b>During your action, you designate an opponent no more than one size category 
+                larger or smaller than you. That opponent doesn't get to add his or her Strength bonus on 
+                attack rolls when targeting you. (if the opponent has a Strength 
+                penalty, he or she still suffers that penalty.)<br>
+                The oppoinent's Strength modifier applies to damage as usual.<br>
+                You can select a new opponent on your next turn.<br>
+            </div>
+            
+            <div id="underworldconnections"><h4>Underworld Connections</h4><br>
+                You can arrange with Black Sun for crimes to be committed. Without becoming personally involved.<br>
+                <b>Benefit: </b>You can attempt favor checks to arrange criminal acts. Easy favors could include procuring weapons (where weapons are illegal). Stealing a vechile, or helping to cover up a small crime. Problematic favors could include stealing a small starship, having someone attacked, or helping to cover up a felony (such as robbery or assault). Difficult favors could include stealing a large starship, having someone killed or kidnapped, or helping to cover up a major felony (such as murder). In any case, the cirme is committed without your invovlement becoming known.<br>
+                &emsp;Whenever you successfully arrange a favor like this with Black Sun, you must immediately attempt a Diplomacy check, with the Dc equal to the Dc of the favor. If the check fials, you lose one point of Black Sun sympathy. If the check fails by 10 or more, you lose one point of Black Sun Sympathy and Black Sun expects you to assist them in some equally cirminal way (such as arranging a similar favor for someone else). This ensures that they hav esomething to use against you at some point in the future, if they deem it necessary to do so. <br>
+                <b>Special: </b>You must have joined the Black Sun criminal syndicate to take this feat. If you later leave Black Sun, you lose the benefits of this feat.<br>
+            </div>
+            
+            <div id="untouchable"><h4>Untouchable</h4><br>
+                Your status as a member of a noble house makes it difficult for criminal charges to stick, thanks to the prestige and sway your position gives you.<br>
+                <b>Prerequisite: </b>Noble house (any one) Sympathy +5<br>
+                <b>Benefit: </b>When dealing with law enforcement or governmental officials, you double your Reputation bonus. <br>
+                <b>Special: </b>You mus thave joined a noble house to take this feat. If you later leave the noble house, you lose the benefits of this feat.<br>
+            </div>
+
+            <div id="weaponfinesse"><h4>Weapon Finesse</h4><br>
+                You are especially skilled at using a certain weapon, one that can't benefit as much from 
+                Dexterity as from Strength. Choose one weapon from this list: cesta, combat glvoe, 
+                double-bladed lightsaber, force pike, knife, lightsaber, unarmed strike, vibroblade, 
+                vibrodatter.<br>
+                <b>Prerequisite: </b>Proficient with weapon, base attack bonus +1.<br>
+                <b>Benefit: </b>With the selected weapon, you may use your Dexterity modifier instead of your 
+                Strength modifier on attack rolls.<br>
+                <b>Special: </b>You can gain this feat multiple times. Each time you take the feat, it applies 
+                to a different weapon.<br>
+            </div>
+
+            <div id="weaponfocus"><h4>Weapon Focus</h4><br>
+                Choose a specific weapon, such as blaster pistol or lightsaber. You are especially good at 
+                using this weapon. You can choose unarmed strike or grapple for your weapon for purposes of 
+                this feat.<br>
+                <b>Prerequisite: </b>Proficient with weapon, base attack bonus +1. <br>
+                <b>Benefit: </b>You add +1 to all attack rolls you make using the selected weapon.<br>
+                <b>Special: </b>You can gain this feat multiple times. Its effects do not stack. Each time you 
+                take the feat, it applies to a different weapon. <br>
+            </div>
+
+            <div id="weapongroupproficiency"><h4>Weapon Group Proficiency</h4><br>
+                Choose a group of weapons form the following list of types: blaster pistols, blaster rifles, 
+                heavy weapons, primitive weapons, simple weapons, slugthrowers, vehicle weapons, or vibro 
+                weapons. You understand how to use all weapons of that group in combat.<br>
+                <b>Benefit: </b>You make attack rolls with the weapon normally.<br>
+                <b>Normal: </b>A character who uses a weapon without being proficient with it takes a -4 
+                penalty on attack rolls. <br>
+                <b>Special: </b>You can gain this feat multiple times. Each time you take the feat, it applies 
+                to a different weapon group.<br>
+                Instead you must select the Exotic Weapon Proficiency feat to gain proficiency with a specific 
+                exotic weapon (such as the lightsaber or the bowcaster). <br>
+            </div>
+
+            <div id="weaponspecialization"><h4>Weapon Specialization</h4><br>
+                Choose one type of weapon, such as blaster pistol, for which you have already selected the 
+                Weapon Focus feat. You deal extra damage when using this eapon. You can shoose "unarmed 
+                strike" or "grapple" for your weapon for purposes of this feat.<br>
+                <b>Prerequisite: </b>Proficient wwith weapon, Weapon Focus with weapon, Soldier level 5th.<br>
+                <b>Benefit: </b>You gain a +2 bonus on all damage rolls you make using the selected weapon.<br>
+                <b>Special: </b>You can gain this feat multiple times. its effects do not stack. Each time you 
+                take the feat, it applies to a new weapon. <br>
+                A solider may select this feat as one of his soldier bonus feats.
+            </div>
+
+            <div id="whirlwindattack"><h4>Whirlwind Attack</h4><br>
+                You can strike nearby opponents in an amazing, spinning melee attack.<br>
+                <b>Prerequisite: </b>Dexterity 13, Intelligence 13, Dodge, Mobility, Spring Attack, Combat 
+                Expertise, base attack bonus +4. <br>
+                <b>Benefit: </b>When you perform a full-round action, you can give up your regular attacks and 
+                instead make one melee attack at your full base attack bonus against each opponent within 2 
+                meters of your position. <br>
+            </div>
+
+            <div id="worldwise"><h4>Worldwise</h4><br>
+                You have visited many worlds and studied their native languages and customs.<br>
+                <b>Benefit: </b>You gaina +2 aptitude bonus on all Knowledge (world lore) 
+                checks. Additionally, you may make an Intelligence check (DC 13 for common languages, 15 for 
+                uncommon languages, 18 for rare languages) to recognize and use basic phrases of a language 
+                you do not speak. Examples of such simple phrases include "hello," "goodbye," "thank you," "i 
+                am peaceful," "don't shoot," or any other basic phrases the Gamemaster allows.<br>
+            </div>
+
+            <div id="zerogtraining"><h4>Zero-G Training</h4><br>
+                You can function normally in low gravity or zero gravity.<br>
+                <b>Prerequisite: </b>Dexterity 13, Tumble 4 ranks.<br>
+                <b>Benefit: </b>You take no penalty to actions in low gravity or zero gravity.<br>
+                <b>Normal: </b>Without this feat, most actions in zero gravity have a -4 penalty, an actions 
+                in low-gravity environments have a -2 penalty. <br>
+            </div>
+
+            <div id="martialartsfeats"><h4>Martial Arts Feats</h4><br>
+                Throughout the galaxy, a number of beings have come to rely upon their hands, feet, claws, 
+                tentacles, and other appendages in combat above any other weapon they may have at their 
+                disposal. A blaster might run out of power, and a lightsaber might sputter and die if not 
+                properly maintained, but a martial artist's weapons are active as long as the being is able to 
+                fight back.<br>
+                The various martial arts forms evolved both independently of each other and through 
+                intermingling with other styles. Many alien races have unique styles that developed alongside 
+                their evolution. rarely taught to outsiders and often particular to the species' unique 
+                physiology. Some styles, especially the more recently invented ones, are created through the 
+                sharing of talent and philosophies from the far reaches of the galaxy. Regardless of their 
+                origins, martial arts forms are strict disciplines with deadly potential. The forms are 
+                described below under each style's base feats.
+                <table>
+                    <tr>
+                        <th>Martial Art</th>
+                        <th>Description</th>
+                        <th>Prerequisite</th>
+                        <th>Benefit</th>
+                        <th>Special</th>
+                    </tr>
+                    <tr>
+                        <td>Echani</td>
+                        <td>Echani is a martial arts style that became the official technique of Emperor 
+                            Palpatine's Royal Guards. The style is thought to have its origins in the style 
+                            practiced by the Sun Guards of Thyrsus, but Palpatine had experts modify the 
+                            original techniques to make them more deadly. The brutal echani style is full of 
+                            jabs, chops, kicks, and other quick and dangerous strikes, focusing on deadliness 
+                            over finesse.</td>
+                        <td>Martial Arts.</td>
+                        <td>When making melee attacks against a prone target, increase the critical threat 
+                            range of the attack by 1 (for exmaple, from 19-19 to 18-20).</td>
+                        <td>The increased threat range granted by this feat does not stack with the increased 
+                            threat range granted by the Improved Critical feat.</td>
+                    </tr>
+                    <tr>
+                        <td>-Echani Expertise</td>
+                        <td>Your knowledge of the echani style allows you to inflict deadly damage to grappled 
+                            opponents.</td>
+                        <td>Base attack bonus +9, Echani, Improved Martial Arts, Martial Arts.</td>
+                        <td >As a full-round action. You may attempt a single coup de grace attack ona  
+                            character oyu have pinned in a grapple as though the target were prone. You deal 
+                            your normal unarmed combat damage when making the coup de grace. If you fail to 
+                            kill the target, he automatically escapes the grapple.</td>
+                    </tr>
+                    <tr>
+                        <td>-Echani Mastery</td>
+                        <td>As a master in teh Echani martial arts tstyle, you are adept at making yourmost 
+                            effective strikes even more potent.</td>
+                        <td>Advanced Martial Arts, Echani, Echani Expertise, Improved Martial Arts, Martial 
+                            Arts.</td>
+                        <td >Any time a character with this feat scores a threat on an unarmed attack the 
+                            character gains a +4 bonus on his attack roll to confirm the critical hit.</td>
+                    </tr>
+                    <tr>
+                        <td>K'tara</td>
+                        <td>K'tara is a martial arts style often practiced by Special Forces units in order to 
+                            maximize damage to an opponent while minimizing the amount of noise made by the 
+                            attack. K'tara focuses on short, quick motions. Most maneuvers begin from the set 
+                            position and move within a small rectangle framed by the target's shoulders and 
+                            hips. A solider using the K'tara style can quietly disarm an opponent and reduce 
+                            him to unconsciousness within a single round of combat, attracting little 
+                            attention. This martial arts style emphasizes stealth.</td>
+                        <td>Martial Arts.</td>
+                        <td >If you successfully hit a flat-footed opponent iwth an unarmed attack, the 
+                            opponent is unable to speak or make any kind of noise within his vocal cords for 
+                            2d4 rounds; this includes shouting warnings or raising alarms. A successful 
+                            Fortitude save (DC 15) reduces the number of rounds the victim is unable to speak 
+                            by half(round down). Creatures immune to critical hits and creatures without vocal 
+                            cords (such as droids) cannot be affected.</td>
+                    </tr>
+                    <tr>
+                        <td>-K'tara Expertise</td>
+                        <td>Your knowledge of the K'tara style of fighting lets you disarm opponents with ease.
+                        </td>
+                        <td>K'tara, Martial Arts.</td>
+                        <td >When attempting to disarm an opponent with an unarmed attack, the target does not 
+                            gain the +4 bonus on his attack roll for holding a larger weapon. If the weapon is 
+                            held in two hands, the bonus is reduced from +4 to +2.</td>
+                    </tr>
+                    <tr>
+                        <td>-K'tara Mastery</td>
+                        <td>As an adept in the K'tara martial arts form, you may use an unarmed attack to 
+                            attempt to daze and opponent.</td>
+                        <td>Advanced Martial Arts, Improved Martial Arts, K'tara, K'tara Expertise, Martial 
+                            Arts.</td>
+                        <td >Declare that you are using the feat before you make your attack roll (thus, a 
+                            missed attack roll ruins the attempt). It forces a foe damaged by your unarmed 
+                            attack to make a Fortitude saving throw (DC 10 + your character level). A dazed 
+                            character can take no actions but can defend against attacks normally. You may 
+                            attempt a daze attack once per level per day, and no more than once per round. 
+                            Multiple daze attacks against the same creature do no stack (but the creature can 
+                            be dazed again once the effect wears off). Creatures immune to critical hits 
+                            cannot be dazed by the K'tara Mastery attack.</td>
+                    </tr>
+                    <tr>
+                        <td>K'thri</td>
+                        <td>K'thri is a special martial arts style that dates back to the days of the Old 
+                            Republic, but has survived into the New Jedi Orer era. The style gained popularity 
+                            in many parts of the Galactic Republic as a type of sport. Professional athletes 
+                            competed to see who had the greatest mastery over the style, iwht some competitors 
+                            garnering great wealth and fame from their success. The style is somewhat flashier 
+                            than others, since its practitioners were often entertainers as much as martial 
+                            artists. The K'thari style focuses on speed and rapid, fluid attacks, with wide 
+                            sweeping motions accompanying quick jabs and a good deal of facny footwork.</td>
+                        <td>Martial Arts.</td>
+                        <td >When unarmored and fighting unarmed, you may strike with one extra attack at the 
+                        expense of accuracy. When doing so, you may make one extra attack in a round atyour 
+                        highest base attack, but this attack and each other attack made that roundsuffer a -2 
+                        penalty. For example, a 4th-level soldier has a single attack at abase attack bonus of 
+                        +4. Using the K'thri feat, the soldier would have twoattacks, at +2 and + 2 
+                        respectively.<br>
+                        The -2 penalty applies for 1 round, so it affects attacks of opportunity made before 
+                        your next action. You must use the full-attack action to strike with the K'thri feat. 
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>-K'thari Expertise</td>
+                        <td>You are well versed in K'thari techniques and can open up opponents to future 
+                            attacks.</td>
+                        <td>Improved Martial Arts, K'thari, Martial Arts.</td>
+                        <td >When making a successful unarmed attack against an aopponent, you gain a +2 bonus 
+                            to damage on your next attack against that opponent in the same round (if you 
+                            successfully hit). This does not carry over to attacks the following round, nor is 
+                            the bonus cumulative. For example, for a 16-level soldier has four attacks in a 
+                            round. While fighting unarmed, he successfully hits with his first, second, and 
+                            foruth attacks. He gains a +2 bonus on damage to his second attack, but not to his 
+                            third attack (which misses) or his fourth attack, since his third attack missed.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-K'thri Mastery</td>
+                        <td>As a grand master of K'thari martial arts, you can execute swift and powerful 
+                            maneuvers against an opponent.</td>
+                        <td>Advanced Martial Arts, Improved Martial Arts, K'thri, K'trhi Expertise, Martial 
+                            Arts</td>
+                        <td >Your ability to make extra attacks improves. In addition to the standard single 
+                            extra attack you gets from the K'thri feat, you get a second extra attack, albeit 
+                            at an additional -5 penalty to your base attack. These attacks and each other 
+                            attack made that round suffer the normal -2 penalty for the K'thri feat. For 
+                            example, a 12th-level solider get three attacks at base values of +12/+7/+2. If he 
+                            uses the K'thri Mastery feat, he gets five attacks at a base attackbonus of +10/
+                            +10/+5/+5/+0.</td>
+                    </tr>
+                    <tr>
+                        <td>Stava</td>
+                        <td>The Noghri fighting style known as Stava has spread throughout the galaxy since 
+                            the liberation of the Noghri from the grip of the Empire. Unlike some 
+                            species-specific martial arts, the Noghri have been able to teach their particular 
+                            style of fighting to Humans. Twi'lek. and even Wookies. The style is very 
+                            physical, often bringing the combatants into close contact. Stava combat utilizes 
+                            full-body tackles, throws, and full-arm blows. As well as the powerful jabs and 
+                            snap kicks commonly used in instances where close combat is ineffective. Stava is 
+                            a quick and dangerous style, and in unarmed combat an opponent using it can often 
+                            act before the target has a chance to react.</td>
+                        <td>Martial Arts</td>
+                        <td>When executing a charge attack aciton while unarmed, you gain one additional 
+                            attack, albeit at a -5 penalty.</td>
+                        <td>You may make only a single attack on a charge.</td>
+                    </tr>
+                    <tr>
+                        <td>-Stava Expertise</td>
+                        <td>Using the Stava martial arts style, you can charge an opponent iwth great force.   
+                        </td>
+                        <td>Improved Martial Arts, Martial Arts, Stava.</td>
+                        <td >When you make a successful unarmed attack against an opponent during a 
+                            charge attack action, double your Strength bonus when calculating damage. For 
+                            example. a character with 14 Strength would apply a +4 bonus to damage instead of 
+                            the normal +2 bonus when using this feat.</td>
+                    </tr>
+                    <tr>
+                        <td>-Stava Mastery</td>
+                        <td>As a master of the Stava fighting style, you can deal a devastating blow to an 
+                            opponent.</td>
+                        <td>Advanced Martial Arts. Improved Martial Arts, Martial Arts, Stava, Stava Expertise.
+                        </td>
+                        <td >As a full-round action, instead of making a full attack. you may make 
+                            a single unarmed attack against an opponent. If the attack is successful, you deal 
+                            the maximum unarmed damage on the attack. For every 5 points of base attack bonus, 
+                            you gain an additional +2 bonus on damage. (A 15th-level soldier would deal +6 
+                            points of damage to his unarmed Stava Mastery attack.)</td>
+                    </tr>
+                    <tr>
+                        <td>Teras Kasi</td>
+                        <td>The martial arts for known as Teras Kasi is an extermely rare ancient art. The 
+                            form's origins are found on the world of Bunduki in the Pacanth Reach, populated 
+                            by a near-Human species known as the Epicanthix. The Followers of Palawa are a 
+                            secretive sect of hermits that guard the teachings of Teras Kasi. It is unknown 
+                            whether or not the Followers created the martial arts style, but nearly all Teras 
+                            Kasi masters learned the style by journeying to Bunduki to learn form these 
+                            keepers. The name Teras Kasi actually means "steel hands," referring to the damage 
+                            and toughness of the martial artist's unarmed attacks. The style focuses on power 
+                            and strength, including varying levels of damage depending on the force that is 
+                            applied to the attacks. The style is unique, and masters are few and far between.
+                        </td>
+                        <td>Martial Arts.</td>
+                        <td >Once per day, you may ignore an opponent's damage reduction when calculating 
+                            damage of all your unarmed attacks for 1 round.</td>
+                    </tr>
+                    <tr>
+                        <td>-Teras Kasi Expertise</td>
+                        <td>You are able to block melee weapons with your bare hands.</td>
+                        <td>Defensive Martial Arts, Improved Martial Arts, Martial Arts, Teras kasi.</td>
+                        <td >When fighitng unarmed against an opponent wielding a melee weapon, you may aready 
+                            an action to deflect a single attack. You must be aware of the attack and cannot 
+                            be flat-footed. If you succeed at a Reflex save (DC 20), you suffer no damage form 
+                            the attack. You can use this feat once per round.</td>
+                    </tr>
+                    <tr>
+                        <td>-Teras Kasi Mastery</td>
+                        <td>As a master of the Teras Kasi martial arts tyle, your hands hit with powerful 
+                            force.</td>
+                        <td>Advanced Martial Arts, Defensive Martial Arts, Improved Martial Arts, Martial 
+                            Arts, Teras Kasi, Teras Kasi Expertise.</td>
+                        <td >When making an unarmed attack, increase the number of damage dice by 1. As a 
+                            progression of the Advanced Martial Arts feat, a Medium-size character deals 4d4 
+                            poitns of damage, a Small character deals 4d3 points of damgae, and a Large 
+                            Character deals 4d6 poitns of damage.</td>
+                    </tr>
+                    <tr>
+                        <td>Wrruushi</td>
+                        <td>Wookie warriors have crafted a special style of fighting that combhiens their 
+                            incredible strength with precise motions to perfect a martial arts form unique to 
+                            their species. The style, known as Wrruushi, cannot be taught to members of other 
+                            species. The style not only allows the use of lethal force but also gives Wookiees 
+                            options beyond simply smashing their opponents. In face, one of the main focuses 
+                            of the style is the ability to disable an opponent instead of killing him. SInce 
+                            much of the Wookiee's strength is in her upper body, the martial arts style 
+                            focuses heavily on punches, jabs, and throws. Unlike the quicker martial arts, 
+                            Wrruushi focuses more on single strikes, no more than two or three at a time.</td>
+                        <td>Martial Arts, Wookiees only.</td>
+                        <td >As an full-attack action, you may make a single unarmed attack against one 
+                            opponent, adding one and a half times your Strength bnonus to damage.</td>
+                    </tr>
+                    <tr>
+                        <td>Wrruushi Expertise</td>
+                        <td>You can knock opponents unconscious with an unarmed attack.</td>
+                        <td>Improved Martial Arts, Martial Arts, Wrruushi, Wookiees only.</td>
+                        <td>As a full-attac action, you can attempt to knock your target unconscious iwth an 
+                            unarmed strike. If you score a hit that deals wound damage that exceeds the 
+                            target's Defense by 10 or more, the target must succeed at a Fortitudesave (DC= 10 
+                            + damage dealt) or fall unconscious for 1d6 rounds.</td>
+                    </tr>
+                    <tr>
+                        <td>Wrruushi Mastery</td>
+                        <td>As a master of the Wrruushi fighting style, you can make a killing strike.</td>
+                        <td>Advanced Martial Arts, Improved Martial Arts, Martial Arts, Wrruushi, Wrruushi 
+                            Expertise, Wookiees only.</td>
+                        <td >Onc eper day, you may attempt to deal a killing blow to an opponent. You declare 
+                            your intention to deal a killing blow, and then make a normal unarmed attack roll. 
+                            If you strike successfully and the target takes wound damage from the blow, the 
+                            target must make a Fortitude saving throw (DC 10 + half your character level) or 
+                            die. Creatures immune to critical hits cannot be affected.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </body>
+</html>

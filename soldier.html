@@ -1,0 +1,376 @@
+<?php
+include("../common.include.php");
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Soldier</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../default.css">
+    </head>
+    <body>
+        <div class="navBar">
+            <ul>
+                The rules.
+                <li><a href="/skills.html">Skills</a></li>
+                <li><a href="/feats.html">Feats</a></li>
+                <li><a href="/feats.html">Force feats</a></li>
+                <li><a href="/travel.html">Travel</a></li>
+                <li><a href="/classes.html">Classes</a></li>
+            </ul>
+            <ul>
+                Calculators.
+                <li><a href="/calculatorAttack.html">Attack calculator</a></li>
+                <li><a href="/calculatorSpaceCombat.html">Space calculator</a></li>
+                <li><a href="/calculatorAstrogation.html">Astrogation calculator</a></li>
+                </ul>
+            </div>
+
+        <div class="rightNavBar">
+            <small>*Found in <i>Revised Core Rulebook</i> on page #50</small>
+        </div >
+
+        <div class="mainBody">
+            <h1>Soldier</h1>
+            <div class="ClassBoilerPlate">
+                Soldiers combine discipline with martial skills to become the best pure warriors int eh 
+                galaxy. Soldiers can be stalwart defenders of those in need, cruel marauders, or brave 
+                adventurers. They can be hired guns, noble champions, or cold-hearted killers. They fight for 
+                glory, for honor, to right wrongs, to gain power, to acquire wealth, or simply for the thrill 
+                of battle.<br>
+
+                <b>Exploits</b><br>
+                Many soldiers see adventures, raids on enemy strongholds, and dangerous missions as their 
+                jobs. Some want to defend those who can't defend themselves; others seek to use their muscle to 
+                carve their own place of importance in the galaxy. Whatever their initial motivation, most 
+                soldiers wind up living for the thrill of combat and the excitement of adventure. Adventuring 
+                soldiers call themselves guards, bodyguards, champions, enforcers, mercenaries, warriors, 
+                soldiers of fortune, or simply adventurers.
+                <br><br>
+
+                <b>Characteristics</b><br>
+                Soldiers have the best all-around fighting abilities, and an individual soldier develops 
+                styles and techniques that set him apart from his peers. A given soldier might be especially 
+                capapble with certain weapons, another trained to execute specific combat maneuvers. As 
+                soliders gain experience, they get more opportunities to develop their fighting skills.
+                <br><br>
+
+                <b>Background</b><br>
+                Most soldiers come to the profession after recieving at least some amount of formal training 
+                from a military organization, local militia, or private army. Some attend formal academies; 
+                others are self-taught and well tested. A soldier may have taken up his weapon to escape a 
+                mundane life, Another may be following a proud family tradiiton. soldiers in a particular unit 
+                share a certain camaraderie, btu most have nothing in common except battle prowess and the 
+                desire to apply it to a given situation.
+                <br><br>
+
+                <b>Exmaples of Fringers in Star Wars</b><br>
+                Admiral Ackbar, Corran Horn, Captain Panaka, Captain Typho, Lt. Page, General Madine, Zam 
+                Wesell.
+                <br><br>
+            </div>
+            <h2>Game Rule Information</h2>
+            <b>The Soldier</b><br>
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>Base Attack Bonus</th>
+                    <th>Fort Save</th>
+                    <th>Ref Save</th>
+                    <th>Will Save</th>
+                    <th>Special</th>
+                    <th>Defense Bonus</th>
+                    <th>Reputation Bonus</th>
+                </tr>
+                <tr>
+                    <td>1st</td>
+                    <td>+1</td>
+                    <td>+2</td>
+                    <td>+0</td>
+                    <td>+0</td>
+                    <td>Starting feats</td>
+                    <td>+3</td>
+                    <td>+0</td>
+                </tr>
+                <tr>
+                    <td>2nd</td>
+                    <td>+2</td>
+                    <td>+3</td>
+                    <td>+0</td>
+                    <td>+0</td>
+                    <td>Bonus feat</td>
+                    <td>+3</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>3rd</td>
+                    <td>+3</td>
+                    <td>+3</td>
+                    <td>+1</td>
+                    <td>+1</td>
+                    <td>Bonus feat</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4th</td>
+                    <td>+4</td>
+                    <td>+4</td>
+                    <td>+1</td>
+                    <td>+1</td>
+                    <td>Bonus feat</td>
+                    <td>+4</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>5th</td>
+                    <td>+5</td>
+                    <td>+4</td>
+                    <td>+1</td>
+                    <td>+1</td>
+                    <td></td>
+                    <td>+5</td>
+                    <td>+1</td>
+                </tr>
+                <tr>
+                    <td>6th</td>
+                    <td>+6/+1</td>
+                    <td>+5</td>
+                    <td>+2</td>
+                    <td>+2</td>
+                    <td>Bonus feat</td>
+                    <td>+5</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>7th</td>
+                    <td>+7/+2</td>
+                    <td>+5</td>
+                    <td>+2</td>
+                    <td>+2</td>
+                    <td></td>
+                    <td>+6</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>8th</td>
+                    <td>+8/+3</td>
+                    <td>+6</td>
+                    <td>+2</td>
+                    <td>+2</td>
+                    <td>Bonus feat</td>
+                    <td>+6</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>9th</td>
+                    <td>+9/+4</td>
+                    <td>+6</td>
+                    <td>+3</td>
+                    <td>+3</td>
+                    <td></td>
+                    <td>+7</td>
+                    <td>+2</td>
+                </tr>
+                <tr>
+                    <td>10th</td>
+                    <td>+10/+5</td>
+                    <td>+7</td>
+                    <td>+3</td>
+                    <td>+3</td>
+                    <td>Bonus feat</td>
+                    <td>+7</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td>11th</td>
+                    <td>+11/+6/+1</td>
+                    <td>+7</td>
+                    <td>+3</td>
+                    <td>+3</td>
+                    <td></td>
+                    <td>+8</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td>12th</td>
+                    <td>+12/+7/+2</td>
+                    <td>+8</td>
+                    <td>+4</td>
+                    <td>+4</td>
+                    <td>Bonus feat</td>
+                    <td>+8</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td>13th</td>
+                    <td>+13/+8/+3</td>
+                    <td>+8</td>
+                    <td>+4</td>
+                    <td>+4</td>
+                    <td></td>
+                    <td>+9</td>
+                    <td>+3</td>
+                </tr>
+                <tr>
+                    <td>14th</td>
+                    <td>+14/+9/+4</td>
+                    <td>+9</td>
+                    <td>+4</td>
+                    <td>+4</td>
+                    <td>Bonus feat</td>
+                    <td>+9</td>
+                    <td>+4</td>
+                </tr>
+                <tr>
+                    <td>15th</td>
+                    <td>+15/+10/+5</td>
+                    <td>+9</td>
+                    <td>+5</td>
+                    <td>+5</td>
+                    <td></td>
+                    <td>+10</td>
+                    <td>+4</td>
+                </tr>
+                <tr>
+                    <td>16th</td>
+                    <td>+16/+11/+6/+1</td>
+                    <td>+10</td>
+                    <td>+5</td>
+                    <td>+5</td>
+                    <td>Bonus feat</td>
+                    <td>+10</td>
+                    <td>+4</td>
+                </tr>
+                <tr>
+                    <td>17th</td>
+                    <td>+17/+12/+7/+2</td>
+                    <td>+10</td>
+                    <td>+5</td>
+                    <td>+5</td>
+                    <td></td>
+                    <td>+11</td>
+                    <td>+4</td>
+                </tr>
+                <tr>
+                    <td>18th</td>
+                    <td>+18/+13/+8/+3</td>
+                    <td>+11</td>
+                    <td>+6</td>
+                    <td>+6</td>
+                    <td>Bonus feat</td>
+                    <td>+11</td>
+                    <td>+5</td>
+                </tr>
+                <tr>
+                    <td>19th</td>
+                    <td>+19/+14/+9/+4</td>
+                    <td>+11</td>
+                    <td>+6</td>
+                    <td>+6</td>
+                    <td></td>
+                    <td>+12</td>
+                    <td>+5</td>
+                </tr>
+                <tr>
+                    <td>20th</td>
+                    <td>+20/+15/+10/+5</td>
+                    <td>+12</td>
+                    <td>+6</td>
+                    <td>+6</td>
+                    <td>Bonus feat</td>
+                    <td>+12</td>
+                    <td>+5</td>
+                </tr>
+            </table><br>
+
+            <b>Abilities</b><br>
+            Since most combat in the Star Wars universe uses blasters and other ranged weapons, Dexterity is the soldier's most important ability score, followed closely by Constitution and Strength. Don't underestimate the importance of Intelligence and wisdom, however, since many of the soldier's useful skills are based on these abilities.
+            <br><br>
+
+            <b>Vitality</b><br>
+            Soldiers gain 1d10 Vitality points per level. The character's Consitution modifer applies.<br><br>
+            <div class="imageContainer">
+                <div class="flexPic">
+                    <image class="classImage" src="images/Class-soldier.png"> </image>
+                </div>
+                <div class="requirements">
+                <b>Class Skills</b><br>
+                        The soldier's class skills, and the key ability for each are as follows.
+                        <uL>
+                            <li>Astrogate (Int)</li>
+                            <li>Computer Use (Int)</li>
+                            <li>Craft* (Int)</li>
+                            <li>Demolitions (Int)</li>
+                            <li>Intimidate (Cha)</li>
+                            <li>Knowledge* (Int)</li>
+                            <li>Pilot (Dex)</li>
+                            <li>Profession* (Wis)</li>
+                            <li>Repair (Int)</li>
+                            <li>Treat Injury (Wis)</li>
+                        </uL>
+                        <?=skillDisclaimer()?>
+                        Skill points at 1st Level: (4 + Int modifier) x 4.<br>
+                        Skill Points at each additional Level: 4 + Int modifier.<br><br>
+                </div>
+            </div>
+            
+
+            <!-- the php function is in another folder, I want to reuse the same function. -->
+            <b>Starting Feats</b><br>
+            <ul>
+                <li>Weapon Group Proficiency (blaster pistols)</li>
+                <li>Weapon Group Proficiency (blaster rifles)</li>
+                <li>Weapon Group Proficiency (heavy weapons)</li>
+                <li>Weapon Group Proficiency (simple weapons)</li>
+                <li>Weapon Group Proficiency (vibro weapons)</li>
+            </ul>
+            <br><br>
+
+            <b>Bonus Feats</b><br>
+            At 2nd, 3rd, 4th, 6th, 8th, 10th, 12th, 14th, 16th, 18th, and 20th level the soldier gets a bonus feat. This feat must be drawn from the following list, and the soldier must meet any prerequisites.<br>
+            <ul>
+                <li>Ambidexterity</li>
+                <li>Armor Proficiency (medium)</li>
+                <li>Armor Proficiency (heavy)</li>
+                <li>Blind-Fight</li>
+                <li>Cleave</li>
+                <li>Combat Reflexes</li>
+                <li>Dodge</li>
+                <li>Exotic Weapon proficiency</li>
+                <li>Combat expertise</li>
+                <li>Far Shot</li>
+                <li>Great Cleave</li>
+                <li>Heroic Surge</li>
+                <li>Improved Critical</li>
+                <li>Improved Initiative</li>
+                <li>Improved Martial Arts</li>
+                <li>Improved Two-Weapon Fighting</li>
+                <li>Martial Arts</li>
+                <li>Mobility</li>
+                <li>Point Blank Shot</li>
+                <li>Power Attack</li>
+                <li>Precise Shot</li>
+                <li>Quick Draw</li>
+                <li>Rapid Shot</li>
+                <li>Shot on the Run</li>
+                <li>Spring Attack</li>
+                <li>Starship Dodge</li>
+                <li>Starship Operation*</li>
+                <li>Two-Weapon Fighting</li>
+                <li>Weapon Finesse*</li>
+                <li>Weapon Focus*</li>
+                <li>Whirlwind Attack</li>
+            </ul>
+            A character can select feats marked with an asterisk (*) more than once, but it must be for a 
+            different aspect of starship operation or a different weapon each time.
+            <br><br>
+
+            <b>Credits</b><br>
+            A 1st-level soldier starts play with 1d6 x 500 credits.
+        </div>
+    </body>
+</html>

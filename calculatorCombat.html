@@ -1,0 +1,310 @@
+<!-- 
+<div id="">
+    <form>
+        <fieldset>                        
+            <legend></legend>
+            <label for=""></label><br>
+            <input type="">
+        </fieldset>                        
+    </form>
+</div> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Combat rules</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="default.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="commonJS.js"></script>
+    <style>
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        
+        <div class="navBar">
+            <ul>
+                The rules.
+                <li><a href="/skills.html">Skills</a></li>
+                <li><a href="/feats.html">Feats</a></li>
+                <li><a href="/feats.html">Force feats</a></li>
+                <li><a href="/travel.html">Travel</a></li>
+                <li><a href="/classes.html">Classes</a></li>
+            </ul>
+            <ul>
+                Calculators.
+                <li><a href="/calculatorAttack.html">Attack calculator</a></li>
+                <li><a href="/calculatorSpaceCombat.html">Space calculator</a></li>
+                <li><a href="/calculatorAstrogation.html">Astrogation calculator</a></li>
+                </ul>
+            </div>
+    
+            <div class="rightNavBar">
+            </div >
+
+        <div class="rightNavBar">
+            <div id="totals">
+                <div id="rightNavCheckboxes">
+                    <input type="checkbox" class="" id="boxForGrapple"><label for="boxForGrapple">See
+                        Grapple</label><br>
+                    <input type="checkbox" class="" id="boxForTwoWeapon"><label for="boxForTwoWeapon">See multi weapon
+                        fighting</label><br>
+                    <input type="checkbox" class="" id="boxForImprovedTwoWeapon"><label
+                        for="boxForImprovedTwoWeapon">see improved multi weapon fighting</label><br><br>
+                </div>
+                <div id="defense">Your total Defense: <span id="span_totalDefense"></span></div><br>
+                <div id="meleeAttack">Your total Melee Attack Bonus:<span id="span_totalMelee"></span></div>
+                <div id="grapple" hidden>Your total Grapple Bonus:<span id="span_grapple"></span></div><br>
+                <div id="rangedAttack">Your total Ranged Attack Bonus:<span id="span_rangedAttack"></span></div><br>
+                <div id="twoWeapon" hidden>Two Weapon:<span id="span_twoWeapon"></span></div><br>
+                <div id="ImprovedTwoWeapon" hidden>Improved Two Weapon:<span id="span_improvedTwoWeapon"></span></div>
+                <br>
+                <div id=""></div>
+            </div>
+        </div>
+
+        <div class="mainBody">
+            <div id="baseBonus" class="form_width">
+                <form>
+                    <fieldset>
+                        <legend>Your Base bonuses</legend>
+                        <label for="classAttackBonus">Class attack bonus</label>
+                        <input class="updatewhenichange multiEffect" type="range" id="classAttackBonus"
+                            name="classAttackBonus" min="0" max="20"> <span id="span_classAttackBonus"></span><br>
+
+                        <label for="classDefenseBonus">Class defense bonus</label>
+                        <input class="updatewhenichange" type="range" id="classDefenseBonus" name="classDefenseBonus"
+                            min="0" max="20"> <span id="span_classDefenseBonus"></span><br><sup>*if multiclass add all
+                            class values and -2
+                            per additional class</sup><br>
+
+                        <label for="sizemodifier">Size modifier</label>
+                        <select class="updatewhenichange  multiEffect" id="sizemodifier" name="sizemodifier">
+                            <option value="-8">Colossal</option>
+                            <option value="-4">Gargantuan</option>
+                            <option value="-2">Huge</option>
+                            <option value="-1">Large</option>
+                            <option value="0" selected>Medium</option>
+                            <option value="+1">Small</option>
+                            <option value="+2">Tiny</option>
+                            <option value="+4">Diminutive</option>
+                            <option value="+8">Fine</option>
+                        </select>
+
+                        <legend>Your Strength</legend>
+                        <input class="updatewhenichange " id="strAttribute" type="number" value="10"> <span
+                            id="span_strattributetext"></span>
+
+                        <legend>Your Dexterity</legend>
+                        <input class="updatewhenichange  multiEffect" id="dexAttribute" type="number" value="10"> <span
+                            id="span_dexattributetext"></span>
+                    </fieldset>
+                    <div class="left-column">
+                        <fieldset>
+                            <legend>Defense</legend>
+                            <div id="div_natural">
+                                <label for="input_naturalbonus">Natural Armor</label><br>
+                                <input class="updatewhenichange" type="range" id="input_naturalbonus" name="defense"
+                                    min="0" max="5" value="0"> <span id="span_naturalbonus"></span>
+                            </div>
+
+                            <div id="div_cover">
+                                <fieldset>
+                                    <legend>Types of Cover</legend>
+                                    <input class="updatewhenichange" type="checkbox" id="input_cover_quarter"
+                                        name="coverbonus" value="2">
+                                    <label for="input_cover_quarter">Qtr Cover - (A human standing behind a
+                                        1-meter high wall; a character who is targeted by a ranged attack while sitting
+                                        or kneeling)</label><br>
+                                    <input class="updatewhenichange" type="checkbox" id="input_cover_half"
+                                        name="coverbonus" value="4">
+                                    <label for="input_cover_half">Half-Cover - (Fighting from around a corner;
+                                        standing at an open window or behind a character of the same size; a
+                                        character who is targeted by a ranged attack while prone)</label><br>
+                                    <input class="updatewhenichange" type="checkbox" id="input_cover_threeqtr"
+                                        name="coverbonus" value="7">
+                                    <label for="input_cover_threeqtr">3/4th - Peering around a
+                                        corner</label><br>
+                                    <input class="updatewhenichange" type="checkbox" id="input_cover_ninetenths"
+                                        name="coverbonus" value="10">
+                                    <label for="input_cover_ninetenths">9/10th - Standing at a narrow opening;
+                                        behind a door that's slightly ajar<sup>a</sup></label><br>
+                                    <sup>a</sup>Half damage if save is failed; no damage if save is successful.
+                                    <br>
+                                </fieldset>
+
+                                <div id="div_dodgebonuses">
+                                    <fieldset>
+                                        <legend>Dodge Bonuses</legend>
+                                        <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                            id="dodge" value="1">
+                                        <label for="dodge">Dodge target (feat)</label><br>
+
+                                        <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                            id="defensivemartialmarts" value="2">
+                                        <label for="defensivemartialmarts">Defensive Martial Arts (feat)</label><br>
+
+                                        <label for="combatexpertise">Combat Expertise (feat)</label><br>
+                                        <input class="updatewhenichange" type="range" name="input_defense_dodge"
+                                            id="combatexpertise" value="0" min="0" max="20">
+                                        <span id="span_combatexpertise"></span><br>
+
+                                        <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                            id="fightingdefensively" value="2">
+                                        <label for="fightingdefensively">Fighting defensively<small> (full round
+                                                action)</small></label><br>
+
+                                        <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                            id="totaldefense" value="4">
+                                        <label for="totaldefense">Total Defense <small>(attack
+                                                action)</small></label><br>
+
+                                        <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                            id="tumble" value="0">
+                                        <label for="tumble">5+ ranks in tumble</label><br>
+
+                                        <!-- update mobility when working out calculator -->
+                                        <input class="updatewhenichange" type="checkbox"
+                                            name="input_defense_dodge_mobility" id="mobility" value="4">
+                                        <label for="mobility">Mobility (feat)</label><br>
+
+                                        <!-- <input class="updatewhenichange" type="checkbox" name="input_defense_dodge" id="" value="2">
+                                        <label for=""></label><br> -->
+                                        <fieldset>
+                                            <legend>Force user related bonuses</legend>
+
+                                            <label for="lightsaberdeflect">Lightsaber Deflect (class
+                                                ability)</label><br>
+                                            <input class="updatewhenichange" type="range" value="0" min="0" max="4"
+                                                name="input_defense_dodge" id="lightsaberdeflect">
+                                            <span id="span_lightsaberdeflect"></span><br>
+
+                                            <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                                id="lightsaberdefense" value="2">
+                                            <label for="lightsaberdefense">Lightsaber Defense (feat)</label><br>
+
+                                            <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                                id="knightdefense" value="2">
+                                            <label for="knightdefense">Knight Defense (feat)</label><br>
+
+                                            <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                                id="masterdefense" value="2">
+                                            <label for="masterdefense">Master defense (feat)</label><br>
+
+                                            <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                                id="sithsworddefense" value="2">
+                                            <label for="sithsworddefense">Sith sword defense (feat)</label><br>
+
+                                            <input class="updatewhenichange" type="checkbox" name="input_defense_dodge"
+                                                id="sithswordmastery" value="2">
+                                            <label for="sithswordmastery">Sith Sword mastery (feat)</label><br>
+                                        </fieldset>
+                                        <div id="div_other">
+                                            <fieldset>
+                                                <legend>Other</legend>
+                                                <input class="updatewhenichange" type="checkbox"
+                                                    name="input_defense_other" id="offhandparry" value="2"> <label
+                                                    for="offhandparry">Off hand Parry
+                                                    (feat)</label><br>
+
+                                                <input class="updatewhenichange" type="checkbox" name="lightsaberForm"
+                                                    id="form2" value="3">
+                                                <!-- against lightsaber attacks only form II -->
+                                                <label for="form2">Form II</label><br>
+                                                <input class="updatewhenichange" type="checkbox" name="lightsaberForm"
+                                                    id="form3" value="1">
+                                                <label for="form3">Form III</label><br>
+                                                <!-- +1 when using deflect -->
+                                            </fieldset>
+                                        </div>
+                                    </fieldset>
+
+
+                                </div>
+                                <!-- do some on hover stuff to the above -->
+                            </div>
+                    </div>
+
+                    <div id="div_circumstance">
+                        <fieldset>
+                            <legend>Force Influence</legend>
+                            <input class="updatewhenichange" type="checkbox" name="input_defense_circumstance"
+                                id="guardiansguidance" value="2"> <label for="guardiansguidance">Guardian's
+                                guidance (force feat)</label><br>
+
+                            <input class="updatewhenichange" type="checkbox" name="input_defense_circumstance" id="rage"
+                                value="-2"> <label for="rage">Rage (force feat)</label><br>
+
+                            <input class="updatewhenichange  multiEffect" type="checkbox"
+                                name="input_defense_circumstance" id="wookierage" value="-4"> <label
+                                for="wookierage">Wookie Rage</label><br>
+                        </fieldset>
+
+                        <div id="div_statemodifiers" class="form_width">
+                            <form>
+                                <fieldset>
+                                    <legend>Condition modifiers</legend>
+                                    <!--dexterity set to 3  -->
+                                    <input class="updatewhenichange" type="checkbox" id="conditions_blinded"
+                                        name="input_conditions" value="-2">
+                                    <label for="conditions_blinded">You are blinded</label><br>
+
+                                    <!--+2 for targeting cowering foe, place somewhere else  -->
+                                    <input class="updatewhenichange" type="checkbox" id="conditions_cowering"
+                                        name="input_conditions" value="-2">
+                                    <label for="conditions_cowering">target is cowering</label><br>
+
+                                    <!-- -2 on melee and ranged attack, -4 to dexterity -->
+                                    <input class="updatewhenichange" type="checkbox" id="conditions_entangled"
+                                        name="input_conditions" value="-2">
+                                    <label for="conditions_entangled">You are entangled</label><br>
+
+                                    <!-- -2 dexterity & strength -->
+                                    <input class="updatewhenichange" type="checkbox" id="conditions_fatigued"
+                                        name="input_conditions" value="-1">
+                                    <label for="conditions_fatigued">You are fatigued</label><br>
+
+                                    <!-- -6 dexterity & strength -->
+                                    <input class="updatewhenichange" type="checkbox" id="conditions_exhausted"
+                                        name="input_conditions" value="-3">
+                                    <label for="conditions_exhausted">You are exhausted</label><br>
+
+                                    <!-- -4 melee & ranged attack -->
+                                    <input class="updatewhenichange" type="checkbox" id="conditions_improvisedweapon"
+                                        name="input_conditions" value="-4">
+                                    <label for="conditions_improvisedweapon">Weapon is improvised</label><br>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+            </div>
+
+            <div id="attackBonuses">
+
+            </div>
+
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="combatCalculatorWork.js"></script>
+</body>
+
+</html>
