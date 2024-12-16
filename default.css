@@ -42,7 +42,7 @@
 }
 
 body {
-  background-image: url("Images/Background.jpg");
+  background-image: url("images/Background.jpg");
   width: 80%;
 }
 
@@ -83,7 +83,7 @@ table {
 }
 
 .jediCounseling{
-  background-image: url("Images/jediCounseling01.jpg");
+  background-image: url("images/jediCounseling01.jpg");
 }
 
 .question{
